@@ -1,0 +1,120 @@
+<template lang="pug">
+.time-card
+  .time#timeDiv
+  .day
+  //- 头像
+  img.user-img(src="")
+  .user-name
+  .text-box
+    .text-1
+    .text-2
+    .text-3
+</template>
+
+<script>
+  module.exports = {
+    created: function () {
+      function check(val) {
+        if (val < 10) {
+          return ("0" + val);
+        } 
+        else {
+          return (val);
+        }
+      }
+      function displayTime() {
+        function getWeekDate() {
+          var now = new Date();
+          var day = now.getDay();
+          var weeks = new Array("星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六");
+          var week = weeks[day];
+          return week;
+        }
+        //获取div元素
+        var timeDiv=document.getElementById("timeDiv");
+        //获取系统当前的年、月、日、小时、分钟、毫秒
+        var date = new Date();
+        var year = date.getFullYear();
+        var month = date.getMonth() + 1;
+        var day = date.getDate();
+        var hour = date.getHours();
+        var minutes = date.getMinutes();
+        var second = date.getSeconds();
+        var timestr =  check(hour) + ":" + check(minutes);
+        document.querySelector('.day').innerText = year + "年" + month + "月" + day + "日  " + getWeekDate()
+        //将系统时间设置到div元素中
+        timeDiv.innerHTML = timestr;
+      }
+      displayTime()
+      window.setInterval(displayTime, 60000)
+      this.paiming()
+    },
+    paiming: function () {
+
+      fetch("http://bp.people.com.cn/dw_daka/index.php/dangshi/zhang?openId=" + window.operID)
+        .then(response => response.json())
+        .then(result => {
+          console.log(result)
+          this.query('.user-img').src = result.headurl
+          this.query('.user-name').innerText = result.name
+          this.query('.text-box').innerHTML = `<div class="text-1">学习打卡: ${result.day}天</div><div class="text-2">今日排名: ${result.paiming}</div><div class="text-2">今日人数: ${result.renshu}位</div>`
+        })
+        .catch(error => console.log('error', error));
+    }
+  }
+</script>
+
+
+<style lang="less">
+.time-card {
+  width: 690px;
+  height: 176px;
+  background-image: url('@|21.png|');
+}
+.time {
+  position: absolute;
+  right: 25px;
+  width: 100px;
+  font-size: 30px;
+  top: 20px;
+  line-height: 40px;
+  text-align: center;
+  color: #333;
+  font-weight: bold;
+}
+.day {
+  position: absolute;
+  right: 25px;
+  top: 75px;
+  font-size: 22px;
+  color: #333;
+}
+.user-img {
+  width: 80px;
+  position: absolute;
+  left: 40px;
+  top: 18px;
+  border-radius: 15px;
+}
+.user-name {
+  position: absolute;
+  left: 145px;
+  line-height: 49px;
+  font-size: 30px;
+  top: 33px;
+}
+.text-box {
+  display: flex;
+  font-size: 24px;
+  justify-content: space-between;
+  width: 630px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  bottom: 10px;
+  height: 40px;
+  line-height: 40px;
+  color: #7c715f;
+}
+</style>

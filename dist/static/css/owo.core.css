@@ -1,0 +1,221 @@
+body, html, .page, .page-box {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.owo-animation {
+  overflow: hidden;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+.owo-animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+.owo-animation-forward {
+  z-index: 99;
+}
+
+img {
+  border: none;
+}
+
+[route-active="false"] {
+  display: none;
+}
+
+/* 清除浮动 */
+.clear:after {
+  content: "";
+  height: 0;
+  line-height: 0;
+  display: block;
+  visibility: hidden;
+  clear: both;
+  zoom: 1;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+.loading-box {
+  width: 100%;
+  height: 100%;
+  background-image: url('https://cunchu.site/ozzx/resource/lanse.jpg');
+}
+
+.loading-box .loading {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -16%;
+  bottom: 0;
+  margin: auto;
+}
+
+.loading-box .loading-bar {
+  position: absolute;
+  top: 0%;
+  bottom: 0%;
+  height: 20px;
+  background-color: white;
+  width: 80%;
+  margin: auto;
+  left: 0;
+  right: 0;
+  border-radius: 20px;
+  padding: 10px;
+  box-shadow: 2px 3px 9px #5d739c;
+}
+
+.loading-box .num-bar {
+  background-color: #e47d6e;
+  height: 20px;
+  border-radius: 20px;
+  width: 0%;
+  transition: width 0.5s;
+}
+
+.loading-box .num,
+.loading-box .text {
+  position: absolute;
+  top: 0%;
+  bottom: -8%;
+  margin: auto;
+  line-height: 50px;
+  height: 50px;
+  font-size: 36px;
+  width: 100%;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+}
+
+.loading-box .text {
+  bottom: -14%;
+}
+.time-card {
+  width: 690px;
+  height: 176px;
+  background-image: url('../resource/21.png');
+}
+
+.time-card .time {
+  position: absolute;
+  right: 25px;
+  width: 100px;
+  font-size: 30px;
+  top: 20px;
+  line-height: 40px;
+  text-align: center;
+  color: #333;
+  font-weight: bold;
+}
+
+.time-card .day {
+  position: absolute;
+  right: 25px;
+  top: 75px;
+  font-size: 22px;
+  color: #333;
+}
+
+.time-card .user-img {
+  width: 80px;
+  position: absolute;
+  left: 40px;
+  top: 18px;
+  border-radius: 15px;
+}
+
+.time-card .user-name {
+  position: absolute;
+  left: 145px;
+  line-height: 49px;
+  font-size: 30px;
+  top: 33px;
+}
+
+.time-card .text-box {
+  display: flex;
+  font-size: 24px;
+  justify-content: space-between;
+  width: 630px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  bottom: 10px;
+  height: 40px;
+  line-height: 40px;
+  color: #7c715f;
+}
+.page-1 .so-0 {
+  left: 0px;
+  top: 0px;
+}
+
+.page-1 .so-1 {
+  left: 28px;
+  top: 190px;
+  z-index: 1;
+}
+
+.page-1 .so-2 {
+  left: 254px;
+  top: 238px;
+  z-index: 2;
+}
+
+.page-1 .so-3 {
+  left: 191px;
+  top: 692px;
+  z-index: 3;
+}
+
+.page-1 .so-4 {
+  left: 332px;
+  top: 667px;
+  z-index: 4;
+}
+
+.page-1 .so-5 {
+  left: 522px;
+  top: 692px;
+  z-index: 4;
+}
+
+.page-1 .so-6 {
+  left: 610px;
+  top: 876px;
+  z-index: 5;
+}
+
+.page-1 .so-7 {
+  left: 30px;
+  top: 967px;
+  z-index: 6;
+}
+
+.page-1 .so-8 {
+  left: 30px;
+  top: 1161px;
+  z-index: 7;
+}
+

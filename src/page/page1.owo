@@ -1,0 +1,71 @@
+<template lang="pug">
+.page-1
+  img.so.so-0(src="@|3.jpg|")
+  img.so.so-1(src="@|7.png|")
+  img.so.so-2(src="@|13.png|")
+  img.so.so-3(src="@|19.png|")
+  img.so.so-4(src="@|18.png|")
+  img.so.so-5(src="@|20.png|")
+  img.so.so-6(src="@|24.png|")
+  plug.so.so-7(_src="./src/page/timeCard.owo" _name="timeCard")
+  img.so.so-8(src="@|44.png|")
+  .so.botton-box
+    img.so.so-10(src="@|41.png|")
+    img.so.so-11(src="@|40.png|")
+</template>
+
+<script>
+  module.exports = {
+    created: function () {
+
+    }
+  }
+</script>
+
+
+<style lang="less">
+.so-0 {
+  left: 0px;
+  top: 0px;
+}
+.so-1 {
+  left: 28px;
+  top: 190px;
+  z-index: 1;
+}
+.so-2 {
+  left: 254px;
+  top: 238px;
+  z-index: 2;
+}
+.so-3 {
+  left: 191px;
+  top: 692px;
+  z-index: 3;
+}
+.so-4 {
+  left: 332px;
+  top: 667px;
+  z-index: 4;
+}
+.so-5 {
+  left: 522px;
+  top: 692px;
+  z-index: 4;
+}
+.so-6 {
+  left: 610px;
+  top: 876px;
+  z-index: 5;
+}
+.so-7 {
+  left: 30px;
+  top: 967px;
+  z-index: 6;
+}
+.so-8 {
+  left: 30px;
+  top: 1161px;
+  z-index: 7;
+}
+</style>
