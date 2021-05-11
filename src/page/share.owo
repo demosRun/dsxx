@@ -1,0 +1,82 @@
+<template lang="pug">
+.share
+  img(src="@|share.jpg|")
+  img.so-2
+  img.user-img
+  .user-name
+  //- 挑战次数
+  .cishu
+  .xuexi
+  .chengji
+  .paiming
+  .so.botton-box.baocun(go="page1//moveToLeft/moveFromRight")
+    .so.so-10 返回首页
+    img.so.so-11(src="@|40.png|")
+  .so.botton-box.tiaozhan(go="tiaozhan//moveToLeft/moveFromRight")
+    .so.so-10 挑战
+    img.so.so-11(src="@|40.png|")
+</template>
+<script>
+module.exports = {
+  show: function () {
+    fetch("http://bp.people.com.cn/dw_daka/index.php/dangshi/zhang?openId=" + window.operID)
+    .then(response => response.json())
+    .then(result => {
+      document.querySelectorAll('.user-img').forEach(element => {
+        element.src = result.headurl
+      });
+      document.querySelectorAll('.user-name').forEach(element => {
+        element.innerText = result.name
+      });
+      this.query('.cishu').innerText = result.cishu + '次'
+      // this.query('.xuexi').innerText = result.day + '天'
+      // this.query('.chengji').innerText = result.day + '天'
+      this.query('.paiming').innerText = result.paiming
+    })
+    .catch(error => console.log('error', error));
+    this.query('.so-2').src = edit[activeIndex].cover
+  },
+}
+</script>
+<style lang="less">
+.user-img {
+  position: absolute;
+  top: 890px;
+  left: 245px;
+  width: 80px;
+  border-radius: 10px;
+}
+.user-name {
+  position: absolute;
+  top: 890px;
+  font-size: 40px;
+  height: 80px;
+  line-height: 80px;
+  left: 360px;
+  color: #666;
+}
+.so-2 {
+  position: absolute;
+  top: 265px;
+  left: 230px;
+  width: 300px;
+}
+.cishu {
+  position: absolute;
+  bottom: 450px;
+  font-size: 31px;
+  color: #958875;
+  width: 100px;
+  text-align: center;
+  left: 60px;
+}
+.paiming {
+  position: absolute;
+  bottom: 450px;
+  font-size: 31px;
+  color: #958875;
+  width: 100px;
+  text-align: center;
+  left: 590px;
+}
+</style>

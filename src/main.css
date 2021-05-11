@@ -52,13 +52,7 @@ h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, bu
   clear: both;
 }
 
-.botton-box {
-  left: 28px;
-  top: 1262px;
-  width: 258px;
-  height: 68px;
-  z-index: 0;;
-}
+
 .botton-box .so-10 {
   left: 0px;
   top: 0px;
@@ -71,4 +65,42 @@ h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, bu
   left: 0px;
   top: 8px;
   z-index: -2;
+}
+.botton-box .so-10 {
+  width: 258px;
+  height: 60px;
+  background-image: url('@|41.png|');
+  text-align: center;
+  line-height: 60px;
+  font-size: 30px;
+  color: #333;
+}
+.botton-box:active .so-10 {
+  transform:translate(0,2px)
+}
+.botton-box.long {
+  width: 688px;
+}
+.botton-box.long .so-10 {
+  width: 688px;
+  height: 70px;
+  background-image: url('@|long-button.png|');
+  text-align: center;
+  line-height: 70px;
+  font-size: 30px;
+  color: #333;
+}
+
+.baocun {
+  left: 28px;
+  top: 1262px;
+  height: 68px;
+  z-index: 0;
+}
+.tiaozhan {
+  right: 28px;
+  top: 1262px;
+  width: 258px;
+  height: 68px;
+  z-index: 0;
 }

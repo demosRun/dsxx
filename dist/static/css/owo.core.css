@@ -54,62 +54,6 @@ li {
   list-style: none;
 }
 
-.loading-box {
-  width: 100%;
-  height: 100%;
-  background-image: url('https://cunchu.site/ozzx/resource/lanse.jpg');
-}
-
-.loading-box .loading {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: -16%;
-  bottom: 0;
-  margin: auto;
-}
-
-.loading-box .loading-bar {
-  position: absolute;
-  top: 0%;
-  bottom: 0%;
-  height: 20px;
-  background-color: white;
-  width: 80%;
-  margin: auto;
-  left: 0;
-  right: 0;
-  border-radius: 20px;
-  padding: 10px;
-  box-shadow: 2px 3px 9px #5d739c;
-}
-
-.loading-box .num-bar {
-  background-color: #e47d6e;
-  height: 20px;
-  border-radius: 20px;
-  width: 0%;
-  transition: width 0.5s;
-}
-
-.loading-box .num,
-.loading-box .text {
-  position: absolute;
-  top: 0%;
-  bottom: -8%;
-  margin: auto;
-  line-height: 50px;
-  height: 50px;
-  font-size: 36px;
-  width: 100%;
-  text-align: center;
-  color: white;
-  font-weight: bold;
-}
-
-.loading-box .text {
-  bottom: -14%;
-}
 .time-card {
   width: 690px;
   height: 176px;
@@ -217,5 +161,386 @@ li {
   left: 30px;
   top: 1161px;
   z-index: 7;
+}
+
+.page-1 .music-bar {
+  top: 611px;
+  position: absolute;
+  width: 470px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  z-index: 9;
+  font-size: 22px;
+  height: 60px;
+  line-height: 60px;
+}
+
+.page-1 .music-bar .line {
+  width: 100%;
+  height: 1px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  background-color: #e0e0e0;
+}
+
+.page-1 .music-bar .doit {
+  width: 45px;
+  height: 45px;
+  background-color: #fdf8f8;
+  box-shadow: 1px 1px 7px #a09898;
+  border-radius: 30px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  left: 0;
+}
+
+.page-1 .music-bar .time-end {
+  position: absolute;
+  right: -80px;
+  top: 0;
+  line-height: 60px;
+  font-size: 22px;
+  width: 70px;
+  text-align: center;
+}
+
+.page-1 .music-bar .time-now {
+  position: absolute;
+  left: -80px;
+  top: 0;
+  line-height: 60px;
+  font-size: 22px;
+  width: 70px;
+  text-align: center;
+}
+
+.page-1 .title {
+  position: absolute;
+  width: 650px;
+  z-index: 9;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 780px;
+  font-size: 31px;
+  line-height: 47px;
+}
+.share .user-img {
+  position: absolute;
+  top: 890px;
+  left: 245px;
+  width: 80px;
+  border-radius: 10px;
+}
+
+.share .user-name {
+  position: absolute;
+  top: 890px;
+  font-size: 40px;
+  height: 80px;
+  line-height: 80px;
+  left: 360px;
+  color: #666;
+}
+
+.share .so-2 {
+  position: absolute;
+  top: 265px;
+  left: 230px;
+  width: 300px;
+}
+
+.share .cishu {
+  position: absolute;
+  bottom: 450px;
+  font-size: 31px;
+  color: #958875;
+  width: 100px;
+  text-align: center;
+  left: 60px;
+}
+
+.share .paiming {
+  position: absolute;
+  bottom: 450px;
+  font-size: 31px;
+  color: #958875;
+  width: 100px;
+  text-align: center;
+  left: 590px;
+}
+.tiaozhan-box {
+  background-image: url('../resource/3.jpg');
+}
+
+.tiaozhan-box .select-box .item {
+  background-image: url('../resource/item-bg.png');
+  height: 100px;
+  line-height: 50px;
+  font-size: 28px;
+  padding: 10px 12px;
+  margin: 0 10px;
+  text-align: center;
+  word-break: keep-all;
+  border-radius: 10px;
+  color: #9d8255;
+}
+
+.tiaozhan-box .zhangjie .item {
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 10px;
+  height: 120px;
+  position: relative;
+  padding-top: 10px;
+}
+
+.tiaozhan-box .zhangjie .item .time {
+  position: absolute;
+  right: 0;
+  color: #666;
+  font-size: 24px;
+  bottom: 10px;
+}
+
+.tiaozhan-box .zhangjie .item .code {
+  position: absolute;
+  bottom: 10px;
+  color: #c70000;
+}
+
+.tiaozhan-box .select-box {
+  position: absolute;
+  top: 160px;
+  height: 130px;
+  width: 730px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  display: flex;
+  white-space: normal;
+  overflow: auto;
+}
+
+.tiaozhan-box .zhangjie {
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 670px;
+  top: 300px;
+  margin: auto;
+  font-size: 28px;
+  background-color: white;
+  border-radius: 10px;
+  padding: 25px;
+  height: 830px;
+  overflow: auto;
+}
+
+.tiaozhan-box .baocun {
+  left: 0;
+  right: 0;
+  margin: auto;
+  bottom: 300px;
+}
+.dati {
+  background-image: url('../resource/3.jpg');
+}
+
+.dati .dati-box {
+  background-image: url('../resource/dati-bg.png');
+  width: 652px;
+  height: 227px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 225px;
+  padding: 20px;
+}
+
+.dati .dati-box h2 {
+  font-size: 32px;
+  line-height: 1.7;
+  color: #2e2e2e;
+}
+
+.dati .timu-ind {
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+  font-size: 24px;
+  color: #666;
+}
+
+.dati .timu-box {
+  position: absolute;
+  top: 530px;
+  width: 612px;
+  background-color: white;
+  left: 0;
+  right: 0;
+  margin: auto;
+  font-size: 30px;
+  padding: 20px 40px;
+  line-height: 1.7;
+  height: 600px;
+}
+
+.dati .timu-box h1 {
+  text-align: center;
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+.dati .input-item {
+  display: flex;
+  align-items: center;
+}
+
+.dati .input-item .select {
+  width: 30px;
+  height: 30px;
+  margin-right: 20px;
+}
+
+.dati .text {
+  margin-bottom: 20px;
+}
+
+.dati .baocun {
+  top: 1200px;
+}
+@-webkit-keyframes flicker {
+  from {
+    opacity: 100%;
+  }
+
+  to {
+    opacity: 20%;
+  }
+}
+
+@keyframes flicker {
+  from {
+    opacity: 100%;
+  }
+
+  to {
+    opacity: 20%;
+  }
+}
+
+[o-animation="flicker"] {
+  -webkit-animation: flicker 2s linear 0s infinite alternate;
+  animation: flicker 2s linear 0s infinite alternate;
+}
+
+.cjd .botton-box {
+  top: 940px;
+}
+
+.cjd .share-info {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 1070px;
+  text-align: center;
+  font-size: 30px;
+  color: #3e3e3e;
+}
+
+.cjd .code {
+  position: absolute;
+  top: 475px;
+  font-size: 120px;
+  color: #bc0000;
+  left: 275px;
+}
+
+.cjd .bottom-text {
+  position: absolute;
+  top: 700px;
+  font-size: 24px;
+  color: #666;
+  left: 52px;
+}
+
+.cjd .user-img {
+  position: absolute;
+  top: 205px;
+  left: 306px;
+  width: 90px;
+  height: 90px;
+  border-radius: 5px;
+}
+
+.cjd .user-name {
+  position: absolute;
+  text-align: center;
+  top: 300px;
+  left: 247px;
+  width: 200px;
+  font-size: 30px;
+  color: #666;
+  height: 40px;
+  line-height: 40px;
+}
+
+.cjd .share-main {
+  position: absolute;
+  top: 365px;
+  font-size: 34px;
+  text-align: center;
+  width: 600px;
+  left: 50px;
+  font-weight: bold;
+}
+
+.cjd .share-main2 {
+  position: absolute;
+  top: 430px;
+  width: 600px;
+  font-size: 26px;
+  color: #666;
+  text-align: center;
+  left: 58px;
+}
+/* 页面切换动画 */
+.o-page-moveToLeft {
+	-webkit-animation: moveToLeft .6s ease both;
+	-moz-animation: moveToLeft .6s ease both;
+	animation: moveToLeft .6s ease both;
+}
+
+@-webkit-keyframes moveToLeft {
+	to { -webkit-transform: translateX(-100%); }
+}
+@-moz-keyframes moveToLeft {
+	to { -moz-transform: translateX(-100%); }
+}
+@keyframes moveToLeft {
+	to { transform: translateX(-100%); }
+}
+.o-page-moveFromRight {
+	-webkit-animation: moveFromRight .6s ease both;
+	-moz-animation: moveFromRight .6s ease both;
+	animation: moveFromRight .6s ease both;
+}
+
+@-webkit-keyframes moveFromRight {
+	from { -webkit-transform: translateX(100%); }
+}
+@-moz-keyframes moveFromRight {
+	from { -moz-transform: translateX(100%); }
+}
+@keyframes moveFromRight {
+	from { transform: translateX(100%); }
 }
 

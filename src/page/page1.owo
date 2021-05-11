@@ -3,21 +3,63 @@
   img.so.so-0(src="@|3.jpg|")
   img.so.so-1(src="@|7.png|")
   img.so.so-2(src="@|13.png|")
-  img.so.so-3(src="@|19.png|")
-  img.so.so-4(src="@|18.png|")
-  img.so.so-5(src="@|20.png|")
+  img.so.so-3(src="@|19.png|" o-tap="last")
+  img.so.so-4(src="@|18.png|" o-tap="play")
+  img.so.so-5(src="@|20.png|" o-tap="next")
   img.so.so-6(src="@|24.png|")
   plug.so.so-7(_src="./src/page/timeCard.owo" _name="timeCard")
   img.so.so-8(src="@|44.png|")
-  .so.botton-box
-    img.so.so-10(src="@|41.png|")
+  //- 音乐条
+  .music-bar
+    .time-now 32
+    .line
+    .doit
+    .time-end
+  //- 标题
+  .title
+  .so.botton-box.baocun(go="share//moveToLeft/moveFromRight")
+    .so.so-10 保存海报
+    img.so.so-11(src="@|40.png|")
+  .so.botton-box.tiaozhan(go="tiaozhan//moveToLeft/moveFromRight")
+    .so.so-10 挑战
     img.so.so-11(src="@|40.png|")
 </template>
 
 <script>
   module.exports = {
-    created: function () {
-
+    data: {
+      isPlay: false
+    },
+    show: function () {
+      this.query('.so-2').src = edit[activeIndex].cover
+    },
+    play: function () {
+      this.data.isPlay = !this.data.isPlay
+      if (this.data.isPlay) {
+        
+        audio.play()
+      } else {
+        audio.pause()
+      }
+      
+    },
+    last: function () {
+      if (edit[activeIndex - 1]) {
+        activeIndex--
+        make(activeIndex)
+        document.querySelector('.music-bar .doit').style.left = 0
+      } else {
+        owo.tool.toast('已经是第一篇了!')
+      }
+    },
+    next: function () {
+      if (edit[activeIndex + 1]) {
+        activeIndex++
+        make(activeIndex)
+        document.querySelector('.music-bar .doit').style.left = 0
+      } else {
+        owo.tool.toast('已经是最后一篇了!')
+      }
     }
   }
 </script>
@@ -67,5 +109,69 @@
   left: 30px;
   top: 1161px;
   z-index: 7;
+}
+.music-bar {
+  top: 611px;
+  position: absolute;
+  width: 470px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  z-index: 9;
+  font-size: 22px;
+  height: 60px;
+  line-height: 60px;
+  .line {
+    width: 100%;
+    height: 1px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    background-color: #e0e0e0;
+  }
+  .doit {
+    width: 45px;
+    height: 45px;
+    background-color: #fdf8f8;
+    box-shadow: 1px 1px 7px #a09898;
+    border-radius: 30px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    left: 0;
+  }
+  .time-end {
+    position: absolute;
+    right: -80px;
+    top: 0;
+    line-height: 60px;
+    font-size: 22px;
+    width: 70px;
+    text-align: center;
+  }
+  .time-now {
+    position: absolute;
+    left: -80px;
+    top: 0;
+    line-height: 60px;
+    font-size: 22px;
+    width: 70px;
+    text-align: center;
+  }
+}
+.title {
+  position: absolute;
+  width: 650px;
+  z-index: 9;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 780px;
+  font-size: 31px;
+  line-height: 47px;
 }
 </style>

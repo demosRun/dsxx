@@ -85,6 +85,11 @@
 			"name": "main",
 			"src": "./src/main.js",
 			"resource": true
+		},
+		{
+			"name": "toast",
+			"afterbody": true,
+			"src": "./owo_modules/toast.js"
 		}
 	],
 	"styleList": [
@@ -96,13 +101,28 @@
 	],
 	"pageList": [
 		{
-			"name": "loading",
-			"src": "https://template.owo.ink/896590e716ebcc0d.owo",
+			"name": "page1",
+			"src": "./src/page/page1.owo",
 			"type": "page"
 		},
 		{
-			"name": "page1",
-			"src": "./src/page/page1.owo",
+			"name": "share",
+			"src": "/src/page/share.owo",
+			"type": "page"
+		},
+		{
+			"name": "tiaozhan",
+			"src": "/src/page/tiaozhan.owo",
+			"type": "page"
+		},
+		{
+			"name": "dati",
+			"src": "/src/page/dati.owo",
+			"type": "page"
+		},
+		{
+			"name": "cjd",
+			"src": "/src/page/cjd.owo",
 			"type": "page"
 		}
 	],

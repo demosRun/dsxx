@@ -1,0 +1,142 @@
+<template lang="pug">
+.dati
+  .dati-box
+    h2
+    .timu-ind
+  .timu-box
+    .text 1/10 1911年10月爆发的（ ），推翻了清王朝的统治，建立了中华民国，结束了统治中国两千多年的君主专制制度。
+    .select-box
+      .input-item
+        input.select(type="radio" name="sel")
+        span 选项1
+      .input-item
+        input.select(type="radio" name="sel")
+        span 选项2
+      .input-item
+        input.select(type="radio" name="sel")
+        span 选项3
+  .so.botton-box.long.baocun.tijiao(o-tap="tijiao")
+    .so.so-10 提交
+    img.so.so-11(src="@|long-button-bg.png|")
+  .so.botton-box.long.baocun.xyt(o-tap="xiayiti" style='display:none;')
+    .so.so-10 下一题
+    img.so.so-11(src="@|long-button-bg.png|")
+  .so.botton-box.long.baocun.cjd(go="cjd//moveToLeft/moveFromRight" style='display:none;')
+    .so.so-10 生成成绩单
+    img.so.so-11(src="@|long-button-bg.png|")
+</template>
+<script>
+module.exports = {
+  data: {
+    timu: [],
+    timuIndex: 0
+  },
+  show: function () {
+    this.data.timu = edit[activeIndex].chapter[chapterIndex].subject
+    this.showTimu()
+  },
+  xiayiti: function () {
+    this.data.timuIndex ++
+    this.showTimu()
+  },
+  showTimu: function () {
+    this.query('.tijiao').style.display = 'block'
+    this.query('.xyt').style.display = 'none'
+    this.query('.cjd').style.display = 'none'
+    const activeItem = this.data.timu[this.data.timuIndex]
+    this.query('.dati-box h2').innerText = activeItem.topic
+    this.query('.timu-ind').innerText = `题目${this.data.timuIndex + 1}`
+    let selectStr = ''
+    for (let index = 0; index < activeItem.list.length; index++) {
+      const element = activeItem.list[index];
+      selectStr += `<div class="input-item"><input class="select" type="radio" name="sel" value="${index}"><span>${element}</span></div>` 
+    }
+    this.query('.timu-box').innerHTML = `<div class="text">${activeItem.timu}</div><div class="select-box">${selectStr}</div>`
+  },
+  tijiao: function () {
+    let selectIndex = $(".input-item input[name='sel']:checked").val()
+    if (selectIndex == undefined) {
+      owo.tool.toast('还没有选择答案!')
+      return
+    }
+    selectIndex = parseInt(selectIndex)
+    // 正确答案
+    const activeItem = this.data.timu[this.data.timuIndex]
+    const itemList = this.queryAll('.select-box .input-item input')
+    console.log(activeItem)
+    if (activeItem.correct == selectIndex) {
+      this.query('.timu-box').innerHTML = `<h1 style="color: green;">回答正确</h1><p>${activeItem.jieshi}</p>`
+    } else {
+      this.query('.timu-box').innerHTML = `<h1 style="color: red;">回答错误</h1><p>${activeItem.jieshi}</p>`
+    }
+    this.query('.tijiao').style.display = 'none'
+    if (this.data.timu[this.data.timuIndex + 1]) {
+      this.query('.xyt').style.display = 'block'
+    } else {
+      this.query('.cjd').style.display = 'block'
+    }
+    
+  }
+}
+</script>
+<style lang="less">
+.dati {
+  background-image: url('@|3.jpg|');
+}
+.dati-box {
+  background-image: url('@|dati-bg.png|');
+  width: 652px;
+  height: 227px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 225px;
+  padding: 20px;
+  h2 {
+    font-size: 32px;
+    line-height: 1.7;
+    color: #2e2e2e;
+  }
+}
+.timu-ind {
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+  font-size: 24px;
+  color: #666;
+}
+.timu-box {
+  position: absolute;
+  top: 530px;
+  width: 612px;
+  background-color: white;
+  left: 0;
+  right: 0;
+  margin: auto;
+  font-size: 30px;
+  padding: 20px 40px;
+  line-height: 1.7;
+  height: 600px;
+  h1 {
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 20px;
+  }
+}
+.input-item {
+  display: flex;
+  align-items: center;
+  .select {
+    width: 30px;
+    height: 30px;
+    margin-right: 20px;
+  }
+}
+.text {
+  margin-bottom: 20px;
+}
+.baocun {
+  top: 1200px;
+}
+</style>

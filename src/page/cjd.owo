@@ -1,0 +1,91 @@
+<template lang="pug">
+.cjd
+  img(src="@|cjd.png|")
+  //- 展示区域
+  img.user-img
+  .user-name
+  .code 96
+  .share-main
+  .share-main2
+  .bottom-text 参加挑战：1天 今日排名：18 今日挑战人数：418位
+  .so.botton-box.baocun(o-tap="window.location.replace('')")
+    .so.so-10 再次挑战
+    img.so.so-11(src="@|40.png|")
+  .so.botton-box.tiaozhan(go="tiaozhan//moveToLeft/moveFromRight")
+    .so.so-10 学习打卡
+    img.so.so-11(src="@|40.png|")
+  .share-info(o-animation="flicker") 长按保存成绩单，分享你的今天战绩吧！
+</template>
+<script>
+module.exports = {
+  show: function () {
+    this.query('.share-main').innerText = edit[activeIndex].showTitle.replace('<br>', '')
+    this.query('.share-main2').innerText = edit[activeIndex].chapter[chapterIndex].title.replace('<br>', '')
+  }
+}
+</script>
+<style lang="less">
+.botton-box {
+  top: 940px;
+}
+.share-info {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 1070px;
+  text-align: center;
+  font-size: 30px;
+  color: #3e3e3e;
+}
+.code {
+  position: absolute;
+  top: 475px;
+  font-size: 120px;
+  color: #bc0000;
+  left: 275px;
+}
+.bottom-text {
+  position: absolute;
+  top: 700px;
+  font-size: 24px;
+  color: #666;
+  left: 52px;
+}
+.user-img {
+  position: absolute;
+  top: 205px;
+  left: 306px;
+  width: 90px;
+  height: 90px;
+  border-radius: 5px;
+}
+.user-name {
+  position: absolute;
+  text-align: center;
+  top: 300px;
+  left: 247px;
+  width: 200px;
+  font-size: 30px;
+  color: #666;
+  height: 40px;
+  line-height: 40px;
+}
+.share-main {
+  position: absolute;
+  top: 365px;
+  font-size: 34px;
+  text-align: center;
+  width: 600px;
+  left: 50px;
+  font-weight: bold;
+}
+.share-main2 {
+  position: absolute;
+  top: 430px;
+  width: 600px;
+  font-size: 26px;
+  color: #666;
+  text-align: center;
+  left: 58px;
+}
+</style>

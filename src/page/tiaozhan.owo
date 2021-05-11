@@ -1,0 +1,92 @@
+<template lang="pug">
+.tiaozhan-box
+  .select-box
+  .zhangjie
+    .item
+      h3 第一章 中国共产党的创建和投身大革命的洪流
+      .code 成绩 90
+      .time 2020-01-01
+    .item
+      h3 第一章 中国共产党的创建和投身大革命的洪流
+      .code 成绩 90
+      .time 2020-01-01
+    .item
+      h3 第一章 中国共产党的创建和投23流
+      .code 成绩 90
+      .time 2020-01-01
+  .so.botton-box.long.baocun(go="share//moveToLeft/moveFromRight")
+    .so.so-10 保存海报
+    img.so.so-11(src="@|long-button-bg.png|")
+</template>
+<script>
+module.exports = {
+}
+</script>
+<style lang="less">
+.tiaozhan-box {
+  background-image: url('@|3.jpg|');
+  .select-box .item {
+    background-image: url('@|item-bg.png|');
+    height: 100px;
+    line-height: 50px;
+    font-size: 28px;
+    padding: 10px 12px;
+    margin: 0 10px;
+    text-align: center;
+    word-break: keep-all;
+    border-radius: 10px;
+    color: #9d8255;
+  }
+  .zhangjie .item {
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 10px;
+    height: 120px;
+    position: relative;
+    padding-top: 10px;
+    .time {
+      position: absolute;
+      right: 0;
+      color: #666;
+      font-size: 24px;
+      bottom: 10px;
+    }
+    .code {
+      position: absolute;
+      bottom: 10px;
+      color: #c70000;
+    }
+  }
+}
+.select-box {
+  position: absolute;
+  top: 160px;
+  height: 130px;
+  width: 730px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  display: flex;
+  white-space: normal;
+  overflow: auto;
+}
+.zhangjie {
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 670px;
+  top: 300px;
+  margin: auto;
+  font-size: 28px;
+  background-color: white;
+  border-radius: 10px;
+  padding: 25px;
+  height: 830px;
+  overflow: auto;
+}
+.baocun {
+  left: 0;
+  right: 0;
+  margin: auto;
+  bottom: 300px;
+}
+</style>

@@ -58,6 +58,12 @@
           this.query('.user-img').src = result.headurl
           this.query('.user-name').innerText = result.name
           this.query('.text-box').innerHTML = `<div class="text-1">学习打卡: ${result.day}天</div><div class="text-2">今日排名: ${result.paiming}</div><div class="text-2">今日人数: ${result.renshu}位</div>`
+          document.querySelectorAll('.user-img').forEach(element => {
+            element.src = result.headurl
+          });
+          document.querySelectorAll('.user-name').forEach(element => {
+            element.innerText = result.name
+          });
         })
         .catch(error => console.log('error', error));
     }
