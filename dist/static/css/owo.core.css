@@ -232,6 +232,10 @@ li {
   font-size: 31px;
   line-height: 47px;
 }
+
+.page-1 .play {
+  width: 94px;
+}
 .share .user-img {
   position: absolute;
   top: 890px;
@@ -297,8 +301,8 @@ li {
   border-bottom: 1px solid #ccc;
   margin-bottom: 10px;
   height: 120px;
-  position: relative;
   padding-top: 10px;
+  position: relative;
 }
 
 .tiaozhan-box .zhangjie .item .time {
@@ -312,13 +316,26 @@ li {
 .tiaozhan-box .zhangjie .item .code {
   position: absolute;
   bottom: 10px;
+  color: #0050b4;
+  width: 200px;
+}
+
+.tiaozhan-box .zhangjie .item .code.active {
   color: #c70000;
+}
+
+.tiaozhan-box .zhangjie .item h3 {
+  font-size: 30px;
+}
+
+.tiaozhan-box .item.active {
+  box-shadow: 1px 1px 5px #ccc;
 }
 
 .tiaozhan-box .select-box {
   position: absolute;
   top: 160px;
-  height: 130px;
+  height: 150px;
   width: 730px;
   left: 0;
   right: 0;
@@ -328,18 +345,35 @@ li {
   overflow: auto;
 }
 
+.tiaozhan-box .select-box .item {
+  position: relative;
+}
+
+.tiaozhan-box .select-box .arrow {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  bottom: -21px;
+  display: none;
+}
+
+.tiaozhan-box .select-box .active .arrow {
+  display: block;
+}
+
 .tiaozhan-box .zhangjie {
   position: absolute;
   left: 0;
   right: 0;
-  width: 670px;
-  top: 300px;
+  width: 630px;
+  top: 320px;
   margin: auto;
   font-size: 28px;
   background-color: white;
   border-radius: 10px;
   padding: 25px;
-  height: 830px;
+  height: 820px;
   overflow: auto;
 }
 
@@ -348,6 +382,12 @@ li {
   right: 0;
   margin: auto;
   bottom: 300px;
+}
+
+.tiaozhan-box .rili {
+  position: absolute;
+  top: 275px;
+  right: 5px;
 }
 .dati {
   background-image: url('../resource/3.jpg');
@@ -461,7 +501,7 @@ li {
   top: 475px;
   font-size: 120px;
   color: #bc0000;
-  left: 275px;
+  right: 338px;
 }
 
 .cjd .bottom-text {
@@ -512,6 +552,14 @@ li {
   text-align: center;
   left: 58px;
 }
+.rili-box {
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  width: 100%;
+  height: 100%;
+}
 /* 页面切换动画 */
 .o-page-moveToLeft {
 	-webkit-animation: moveToLeft .6s ease both;
@@ -542,5 +590,35 @@ li {
 }
 @keyframes moveFromRight {
 	from { transform: translateX(100%); }
+}
+.o-page-moveToRight {
+	-webkit-animation: moveToRight .6s ease both;
+	-moz-animation: moveToRight .6s ease both;
+	animation: moveToRight .6s ease both;
+}
+
+@-webkit-keyframes moveToRight { 
+	to { -webkit-transform: translateX(100%); }
+}
+@-moz-keyframes moveToRight { 
+	to { -moz-transform: translateX(100%); }
+}
+@keyframes moveToRight { 
+	to { transform: translateX(100%); }
+}
+.o-page-moveFromLeft {
+	-webkit-animation: moveFromLeft .6s ease both;
+	-moz-animation: moveFromLeft .6s ease both;
+	animation: moveFromLeft .6s ease both;
+}
+
+@-webkit-keyframes moveFromLeft {
+	from { -webkit-transform: translateX(-100%); }
+}
+@-moz-keyframes moveFromLeft {
+	from { -moz-transform: translateX(-100%); }
+}
+@keyframes moveFromLeft {
+	from { transform: translateX(-100%); }
 }
 

@@ -2,21 +2,10 @@
 .tiaozhan-box
   .select-box
   .zhangjie
-    .item
-      h3 第一章 中国共产党的创建和投身大革命的洪流
-      .code 成绩 90
-      .time 2020-01-01
-    .item
-      h3 第一章 中国共产党的创建和投身大革命的洪流
-      .code 成绩 90
-      .time 2020-01-01
-    .item
-      h3 第一章 中国共产党的创建和投23流
-      .code 成绩 90
-      .time 2020-01-01
   .so.botton-box.long.baocun(go="share//moveToLeft/moveFromRight")
     .so.so-10 保存海报
     img.so.so-11(src="@|long-button-bg.png|")
+  img.rili(src="@|rili.png|")
 </template>
 <script>
 module.exports = {
@@ -43,6 +32,7 @@ module.exports = {
     height: 120px;
     position: relative;
     padding-top: 10px;
+    position: relative;
     .time {
       position: absolute;
       right: 0;
@@ -53,14 +43,24 @@ module.exports = {
     .code {
       position: absolute;
       bottom: 10px;
+      color: #0050b4;
+      width: 200px;
+    }
+    .code.active {
       color: #c70000;
     }
+    h3 {
+      font-size: 30px;
+    }
+  }
+  .item.active {
+    box-shadow: 1px 1px 5px #ccc;
   }
 }
 .select-box {
   position: absolute;
   top: 160px;
-  height: 130px;
+  height: 150px;
   width: 730px;
   left: 0;
   right: 0;
@@ -68,19 +68,33 @@ module.exports = {
   display: flex;
   white-space: normal;
   overflow: auto;
+  .item {
+    position: relative;
+  }
+  .arrow {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    bottom: -21px;
+    display: none;
+  }
+  .active .arrow {
+    display: block;
+  }
 }
 .zhangjie {
   position: absolute;
   left: 0;
   right: 0;
-  width: 670px;
-  top: 300px;
+  width: 630px;
+  top: 320px;
   margin: auto;
   font-size: 28px;
   background-color: white;
   border-radius: 10px;
   padding: 25px;
-  height: 830px;
+  height: 820px;
   overflow: auto;
 }
 .baocun {
@@ -88,5 +102,10 @@ module.exports = {
   right: 0;
   margin: auto;
   bottom: 300px;
+}
+.rili {
+  position: absolute;
+  top: 275px;
+  right: 5px;
 }
 </style>

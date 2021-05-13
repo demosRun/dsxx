@@ -82,6 +82,10 @@
 			"src": "https://cunchu.site/owo/plug/autoScale.js"
 		},
 		{
+			"name": "dayjs",
+			"src": "https://unpkg.com/dayjs@1.8.21/dayjs.min.js"
+		},
+		{
 			"name": "main",
 			"src": "./src/main.js",
 			"resource": true
@@ -124,6 +128,11 @@
 			"name": "cjd",
 			"src": "/src/page/cjd.owo",
 			"type": "page"
+		},
+		{
+			"name": "rili",
+			"src": "/src/page/rili.owo",
+			"type": "block"
 		}
 	],
 	"mode": {

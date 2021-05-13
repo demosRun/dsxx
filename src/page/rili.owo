@@ -1,0 +1,20 @@
+<template lang="pug">
+.rili-box
+
+</template>
+<script>
+module.exports = {
+  show: function () {
+  },
+}
+</script>
+<style lang="less">
+.rili-box {
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.20);
+  width: 100%;
+  height: 100%;
+}
+</style>

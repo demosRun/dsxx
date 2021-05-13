@@ -21,7 +21,22 @@ module.exports = {
   show: function () {
     this.query('.share-main').innerText = edit[activeIndex].showTitle.replace('<br>', '')
     this.query('.share-main2').innerText = edit[activeIndex].chapter[chapterIndex].title.replace('<br>', '')
-  }
+    const fenshu = owo.script.dati.data.timu.length > 0 ? parseInt((owo.script.dati.data.rightNum / owo.script.dati.data.timu.length) * 100) : 0
+    this.query('.code').innerText = fenshu
+    // 保存答题结果
+    var requestOptions = {
+      method: 'POST',
+      headers: {},
+      redirect: 'follow'
+    };
+    if (fenshu == 0) {
+      return
+    }
+    fetch(`http://bp.people.com.cn/dw_daka/index.php/dangshi/zhang?openId=${window.operID}&zhangjie=${datiTitle}&fenshu=${fenshu}&start=${owo.script.dati.data.startTime}&end=${dayjs().format('YYYY-MM-DD HH:mm:ss')}`, requestOptions)
+      .then(response => response.text())
+      .then(result => console.log(result))
+      .catch(error => console.log('error', error));
+    }
 }
 </script>
 <style lang="less">
@@ -42,7 +57,7 @@ module.exports = {
   top: 475px;
   font-size: 120px;
   color: #bc0000;
-  left: 275px;
+  right: 338px;
 }
 .bottom-text {
   position: absolute;

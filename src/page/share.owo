@@ -9,7 +9,7 @@
   .xuexi
   .chengji
   .paiming
-  .so.botton-box.baocun(go="page1//moveToLeft/moveFromRight")
+  .so.botton-box.baocun(go="page1//moveToRight/moveFromLeft")
     .so.so-10 返回首页
     img.so.so-11(src="@|40.png|")
   .so.botton-box.tiaozhan(go="tiaozhan//moveToLeft/moveFromRight")

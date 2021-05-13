@@ -1,371 +1,284 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-
-<head>
-  <!-- 页面的元信息 -->
-  <title>{TAG_14226_TAG}</title>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
-  <meta name="format-detection" content="telephone=no, email=no" />
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="white" />
-  <meta name="renderer" content="webkit" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-  <meta name="filetype" content="1" />
-  <meta name="publishedtype" content="1" />
-  <meta name="pagetype" content="2" />
-  <meta name="screen-orientation" content="landscape" />
-  <meta name="x5-orientation" content="landscape" />
-  <meta name="full-screen" content="yes" />
-  <meta name="x5-fullscreen" content="true" />
-  <meta name="browsermode" content="application" />
-  <meta name="x5-page-mode" content="app" />
-
-  <!-- 页面主样式文件 -->
-  <link charset="utf-8" rel="stylesheet" href="./static/css/owo.core.css">
-
-  <!-- 附属css文件 -->
-  <link rel="stylesheet" href="./static/css/main.css" charset="utf-8">
-
-</head>
-
-<body>
-  <div class="scale-box">
+  <head>
+    <!-- 页面的元信息 -->
+    <title>{TAG_14226_TAG}</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"/>
+    <meta name="format-detection" content="telephone=no, email=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="white"/>
+    <meta name="renderer" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="filetype" content="1"/>
+    <meta name="publishedtype" content="1"/>
+    <meta name="pagetype" content="2"/>
+    <meta name="screen-orientation" content="landscape"/>
+    <meta name="x5-orientation" content="landscape"/>
+    <meta name="full-screen" content="yes"/>
+    <meta name="x5-fullscreen" content="true"/>
+    <meta name="browsermode" content="application"/>
+    <meta name="x5-page-mode" content="app"/>
+    
+      <!-- 页面主样式文件 -->
+      <link charset="utf-8"  rel="stylesheet" href="./static/css/owo.core.css">
+      
+    <!-- 附属css文件 -->
+    <link rel="stylesheet" href="./static/css/main.css" charset="utf-8">
+      
+  </head>
+  <body>
+    <div class="scale-box">
     <!-- 页面[page1]-->
-    <div class="page-1 page" template="page1" style="display: none;">
-      <img class="so so-0" src="./static/resource/3.jpg">
-      <img class="so so-1" src="./static/resource/7.png">
-      <img class="so so-2" src="./static/resource/13.png">
-      <img class="so so-3" src="./static/resource/19.png" o-tap="last">
-      <img class="so so-4" src="./static/resource/18.png" o-tap="play">
-      <img class="so so-5" src="./static/resource/20.png" o-tap="next">
-      <img class="so so-6" src="./static/resource/24.png">
-      <div class="time-card so so-7" template="timeCard">
-        <div class="time" id="timeDiv"></div>
-        <div class="day"></div>
-        <img class="user-img" src="">
-        <div class="user-name"></div>
-        <div class="text-box">
-          <div class="text-1"></div>
-          <div class="text-2"></div>
-          <div class="text-3"></div>
-        </div>
-      </div>
-      <img class="so so-8" src="./static/resource/44.png">
-      <div class="music-bar">
-        <div class="time-now">32</div>
-        <div class="line"></div>
-        <div class="doit"></div>
-        <div class="time-end"></div>
-      </div>
-      <div class="title"></div>
-      <div class="so botton-box baocun" go="share//moveToLeft/moveFromRight">
-        <div class="so so-10">保存海报</div>
-        <img class="so so-11" src="./static/resource/40.png">
-      </div>
-      <div class="so botton-box tiaozhan" go="tiaozhan//moveToLeft/moveFromRight">
-        <div class="so so-10">挑战</div>
-        <img class="so so-11" src="./static/resource/40.png">
-      </div>
-    </div>
+    <div class="page-1 page" template="page1" style="display: none;"><img class="so so-0" src="./static/resource/3.jpg"><img class="so so-1" src="./static/resource/7.png"><img class="so so-2" src="./static/resource/13.png"><img class="so so-3" src="./static/resource/19.png" o-tap="last"><img class="so so-4 play" src="./static/resource/play.png" o-tap="play"><img class="so so-5" src="./static/resource/20.png" o-tap="next"><img class="so so-6" src="./static/resource/24.png"><div class="time-card so so-7" template="timeCard"><div class="time" id="timeDiv"></div><div class="day"></div><img class="user-img" src=""><div class="user-name"></div><div class="text-box"><div class="text-1"></div><div class="text-2"></div><div class="text-3"></div></div></div><img class="so so-8" src="./static/resource/44.png"><div class="music-bar"><div class="time-now">32</div><div class="line"></div><div class="doit"></div><div class="time-end"></div></div><div class="title"></div><div class="so botton-box baocun" go="share//moveToLeft/moveFromRight"><div class="so so-10">保存海报</div><img class="so so-11" src="./static/resource/40.png"></div><div class="so botton-box tiaozhan" go="tiaozhan//moveToLeft/moveFromRight"><div class="so so-10">挑战</div><img class="so so-11" src="./static/resource/40.png"></div></div>
     <!-- 页面[share]-->
-    <div class="share page" template="share" style="display: none;">
-      <img src="./static/resource/share.jpg">
-      <img class="so-2">
-      <img class="user-img">
-      <div class="user-name"></div>
-      <div class="cishu"></div>
-      <div class="xuexi"></div>
-      <div class="chengji"></div>
-      <div class="paiming"></div>
-      <div class="so botton-box baocun" go="page1//moveToLeft/moveFromRight">
-        <div class="so so-10">返回首页</div>
-        <img class="so so-11" src="./static/resource/40.png">
-      </div>
-      <div class="so botton-box tiaozhan" go="tiaozhan//moveToLeft/moveFromRight">
-        <div class="so so-10">挑战</div>
-        <img class="so so-11" src="./static/resource/40.png">
-      </div>
-    </div>
+    <div class="share page" template="share" style="display: none;"><img src="./static/resource/share.jpg"><img class="so-2"><img class="user-img"><div class="user-name"></div><div class="cishu"></div><div class="xuexi"></div><div class="chengji"></div><div class="paiming"></div><div class="so botton-box baocun" go="page1//moveToRight/moveFromLeft"><div class="so so-10">返回首页</div><img class="so so-11" src="./static/resource/40.png"></div><div class="so botton-box tiaozhan" go="tiaozhan//moveToLeft/moveFromRight"><div class="so so-10">挑战</div><img class="so so-11" src="./static/resource/40.png"></div></div>
     <!-- 页面[tiaozhan]-->
-    <div class="tiaozhan-box page" template="tiaozhan" style="display: none;">
-      <div class="select-box"></div>
-      <div class="zhangjie">
-        <div class="item">
-          <h3>第一章 中国共产党的创建和投身大革命的洪流</h3>
-          <div class="code">成绩 90</div>
-          <div class="time">2020-01-01</div>
-        </div>
-        <div class="item">
-          <h3>第一章 中国共产党的创建和投身大革命的洪流</h3>
-          <div class="code">成绩 90</div>
-          <div class="time">2020-01-01</div>
-        </div>
-        <div class="item">
-          <h3>第一章 中国共产党的创建和投23流</h3>
-          <div class="code">成绩 90</div>
-          <div class="time">2020-01-01</div>
-        </div>
-      </div>
-      <div class="so botton-box long baocun" go="share//moveToLeft/moveFromRight">
-        <div class="so so-10">保存海报</div>
-        <img class="so so-11" src="./static/resource/long-button-bg.png">
-      </div>
-    </div>
+    <div class="tiaozhan-box page" template="tiaozhan" style="display: none;"><div class="select-box"></div><div class="zhangjie"></div><div class="so botton-box long baocun" go="share//moveToLeft/moveFromRight"><div class="so so-10">保存海报</div><img class="so so-11" src="./static/resource/long-button-bg.png"></div><img class="rili" src="./static/resource/rili.png"></div>
     <!-- 页面[dati]-->
-    <div class="dati page" template="dati" style="display: none;">
-      <div class="dati-box">
-        <h2></h2>
-        <div class="timu-ind"></div>
-      </div>
-      <div class="timu-box">
-        <div class="text">1/10 1911年10月爆发的（ ），推翻了清王朝的统治，建立了中华民国，结束了统治中国两千多年的君主专制制度。</div>
-        <div class="select-box">
-          <div class="input-item">
-            <input class="select" type="radio" name="sel">
-            <span>选项1</span>
-          </div>
-          <div class="input-item">
-            <input class="select" type="radio" name="sel">
-            <span>选项2</span>
-          </div>
-          <div class="input-item">
-            <input class="select" type="radio" name="sel">
-            <span>选项3</span>
-          </div>
-        </div>
-      </div>
-      <div class="so botton-box long baocun tijiao" o-tap="tijiao">
-        <div class="so so-10">提交</div>
-        <img class="so so-11" src="./static/resource/long-button-bg.png">
-      </div>
-      <div class="so botton-box long baocun xyt" o-tap="xiayiti" style="display:none;">
-        <div class="so so-10">下一题</div>
-        <img class="so so-11" src="./static/resource/long-button-bg.png">
-      </div>
-      <div class="so botton-box long baocun cjd" go="cjd//moveToLeft/moveFromRight" style="display:none;">
-        <div class="so so-10">生成成绩单</div>
-        <img class="so so-11" src="./static/resource/long-button-bg.png">
-      </div>
-    </div>
+    <div class="dati page" template="dati" style="display: none;"><div class="dati-box"><h2></h2><div class="timu-ind"></div></div><div class="timu-box"><div class="text">1/10 1911年10月爆发的（ ），推翻了清王朝的统治，建立了中华民国，结束了统治中国两千多年的君主专制制度。</div><div class="select-box"><div class="input-item"><input class="select" type="radio" name="sel"><span>选项1</span></div><div class="input-item"><input class="select" type="radio" name="sel"><span>选项2</span></div><div class="input-item"><input class="select" type="radio" name="sel"><span>选项3</span></div></div></div><div class="so botton-box long baocun tijiao" o-tap="tijiao"><div class="so so-10">提交</div><img class="so so-11" src="./static/resource/long-button-bg.png"></div><div class="so botton-box long baocun xyt" o-tap="xiayiti" style="display:none;"><div class="so so-10">下一题</div><img class="so so-11" src="./static/resource/long-button-bg.png"></div><div class="so botton-box long baocun cjd" go="cjd//moveToLeft/moveFromRight" style="display:none;"><div class="so so-10">生成成绩单</div><img class="so so-11" src="./static/resource/long-button-bg.png"></div></div>
     <!-- 页面[cjd]-->
-    <div class="cjd page" template="cjd" style="display: none;">
-      <img src="./static/resource/cjd.png">
-      <img class="user-img">
-      <div class="user-name"></div>
-      <div class="code">96</div>
-      <div class="share-main"></div>
-      <div class="share-main2"></div>
-      <div class="bottom-text">参加挑战：1天 今日排名：18 今日挑战人数：418位</div>
-      <div class="so botton-box baocun" o-tap="window.location.replace('')">
-        <div class="so so-10">再次挑战</div>
-        <img class="so so-11" src="./static/resource/40.png">
-      </div>
-      <div class="so botton-box tiaozhan" go="tiaozhan//moveToLeft/moveFromRight">
-        <div class="so so-10">学习打卡</div>
-        <img class="so so-11" src="./static/resource/40.png">
-      </div>
-      <div class="share-info" o-animation="flicker">长按保存成绩单，分享你的今天战绩吧！</div>
-    </div>
-  </div>
+    <div class="cjd page" template="cjd" style="display: none;"><img src="./static/resource/cjd.png"><img class="user-img"><div class="user-name"></div><div class="code">96</div><div class="share-main"></div><div class="share-main2"></div><div class="bottom-text">参加挑战：1天 今日排名：18 今日挑战人数：418位</div><div class="so botton-box baocun" o-tap="window.location.replace('')"><div class="so so-10">再次挑战</div><img class="so so-11" src="./static/resource/40.png"></div><div class="so botton-box tiaozhan" go="tiaozhan//moveToLeft/moveFromRight"><div class="so so-10">学习打卡</div><img class="so so-11" src="./static/resource/40.png"></div><div class="share-info" o-animation="flicker">长按保存成绩单，分享你的今天战绩吧！</div></div></div>
+    <!-- 插件[rili]-->
+    <div class="rili-box owo-block" template="rili" style="display: none;"></div>
+    
+<!-- 框架script文件 -->
+<script src="./static/js/owo.core.js" type="text/javascript" charset="UTF-8"></script>
+<script type="text/javascript" charset="UTF-8">
+owo.script = {
+  "page1": {
+    "data": {
+      "isPlay": false
+    },
+    "show": function show() {
+      this.query('.so-2').src = edit[activeIndex].cover;
+    },
+    "leave": function leave() {
+      console.log('暂停!');
+      document.querySelector('.music-bar .doit').style.left = 0;
+      this.data.isPlay = false;
+      audio.pause();
+    },
+    "play": function play() {
+      this.data.isPlay = !this.data.isPlay;
 
-  <!-- 框架script文件 -->
-  <script src="./static/js/owo.core.js" type="text/javascript" charset="UTF-8"></script>
-  <script type="text/javascript" charset="UTF-8">
-    owo.script = {
-      "page1": {
-        "data": {
-          "isPlay": false
-        },
-        "show": function show() {
-          this.query('.so-2').src = edit[activeIndex].cover;
-        },
-        "play": function play() {
-          this.data.isPlay = !this.data.isPlay;
-
-          if (this.data.isPlay) {
-            audio.play();
-          } else {
-            audio.pause();
-          }
-        },
-        "last": function last() {
-          if (edit[activeIndex - 1]) {
-            activeIndex--;
-            make(activeIndex);
-            document.querySelector('.music-bar .doit').style.left = 0;
-          } else {
-            owo.tool.toast('已经是第一篇了!');
-          }
-        },
-        "next": function next() {
-          if (edit[activeIndex + 1]) {
-            activeIndex++;
-            make(activeIndex);
-            document.querySelector('.music-bar .doit').style.left = 0;
-          } else {
-            owo.tool.toast('已经是最后一篇了!');
-          }
-        },
-        "template": {
-          "timeCard": {
-            "created": function created() {
-              function check(val) {
-                if (val < 10) {
-                  return "0" + val;
-                } else {
-                  return val;
-                }
-              }
-
-              function displayTime() {
-                function getWeekDate() {
-                  var now = new Date();
-                  var day = now.getDay();
-                  var weeks = new Array("星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六");
-                  var week = weeks[day];
-                  return week;
-                } //获取div元素
-
-
-                var timeDiv = document.getElementById("timeDiv"); //获取系统当前的年、月、日、小时、分钟、毫秒
-
-                var date = new Date();
-                var year = date.getFullYear();
-                var month = date.getMonth() + 1;
-                var day = date.getDate();
-                var hour = date.getHours();
-                var minutes = date.getMinutes();
-                var second = date.getSeconds();
-                var timestr = check(hour) + ":" + check(minutes);
-                document.querySelector('.day').innerText = year + "年" + month + "月" + day + "日  " + getWeekDate(); //将系统时间设置到div元素中
-
-                timeDiv.innerHTML = timestr;
-              }
-
-              displayTime();
-              window.setInterval(displayTime, 60000);
-              this.paiming();
-            },
-            "paiming": function paiming() {
-              var _this = this;
-
-              fetch("http://bp.people.com.cn/dw_daka/index.php/dangshi/zhang?openId=" + window.operID).then(function(response) {
-                return response.json();
-              }).then(function(result) {
-                console.log(result);
-                _this.query('.user-img').src = result.headurl;
-                _this.query('.user-name').innerText = result.name;
-                _this.query('.text-box').innerHTML = "<div class=\"text-1\">\u5B66\u4E60\u6253\u5361: " + result.day + "\u5929</div><div class=\"text-2\">\u4ECA\u65E5\u6392\u540D: " + result.paiming + "</div><div class=\"text-2\">\u4ECA\u65E5\u4EBA\u6570: " + result.renshu + "\u4F4D</div>";
-                document.querySelectorAll('.user-img').forEach(function(element) {
-                  element.src = result.headurl;
-                });
-                document.querySelectorAll('.user-name').forEach(function(element) {
-                  element.innerText = result.name;
-                });
-              })["catch"](function(error) {
-                return console.log('error', error);
-              });
+      if (this.data.isPlay) {
+        this.query('.so-4').src = './static/resource/suspend.png';
+        audio.play();
+      } else {
+        this.query('.so-4').src = './static/resource/play.png';
+        audio.pause();
+      }
+    },
+    "last": function last() {
+      if (edit[activeIndex - 1]) {
+        activeIndex--;
+        make(activeIndex);
+        this.data.isPlay = false;
+        this.query('.so-4').src = './static/resource/play.png';
+        document.querySelector('.music-bar .doit').style.left = 0;
+      } else {
+        owo.tool.toast('已经是第一篇了!');
+      }
+    },
+    "next": function next() {
+      if (edit[activeIndex + 1]) {
+        activeIndex++;
+        make(activeIndex);
+        this.data.isPlay = false;
+        this.query('.so-4').src = './static/resource/play.png';
+        document.querySelector('.music-bar .doit').style.left = 0;
+      } else {
+        owo.tool.toast('已经是最后一篇了!');
+      }
+    },
+    "template": {
+      "timeCard": {
+        "created": function created() {
+          function check(val) {
+            if (val < 10) {
+              return "0" + val;
+            } else {
+              return val;
             }
           }
-        }
-      },
-      "share": {
-        "show": function show() {
-          var _this2 = this;
 
-          fetch("http://bp.people.com.cn/dw_daka/index.php/dangshi/zhang?openId=" + window.operID).then(function(response) {
+          function displayTime() {
+            function getWeekDate() {
+              var now = new Date();
+              var day = now.getDay();
+              var weeks = new Array("星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六");
+              var week = weeks[day];
+              return week;
+            } //获取div元素
+
+
+            var timeDiv = document.getElementById("timeDiv"); //获取系统当前的年、月、日、小时、分钟、毫秒
+
+            var date = new Date();
+            var year = date.getFullYear();
+            var month = date.getMonth() + 1;
+            var day = date.getDate();
+            var hour = date.getHours();
+            var minutes = date.getMinutes();
+            var second = date.getSeconds();
+            var timestr = check(hour) + ":" + check(minutes);
+            document.querySelector('.day').innerText = year + "年" + month + "月" + day + "日  " + getWeekDate(); //将系统时间设置到div元素中
+
+            timeDiv.innerHTML = timestr;
+          }
+
+          displayTime();
+          window.setInterval(displayTime, 60000);
+          this.paiming();
+        },
+        "paiming": function paiming() {
+          var _this = this;
+
+          fetch("http://bp.people.com.cn/dw_daka/index.php/dangshi/zhang?openId=" + window.operID).then(function (response) {
             return response.json();
-          }).then(function(result) {
-            document.querySelectorAll('.user-img').forEach(function(element) {
+          }).then(function (result) {
+            console.log(result);
+            _this.query('.user-img').src = result.headurl;
+            _this.query('.user-name').innerText = result.name;
+            _this.query('.text-box').innerHTML = "<div class=\"text-1\">\u5B66\u4E60\u6253\u5361: " + result.day + "\u5929</div><div class=\"text-2\">\u4ECA\u65E5\u6392\u540D: " + result.paiming + "</div><div class=\"text-2\">\u4ECA\u65E5\u4EBA\u6570: " + result.renshu + "\u4F4D</div>";
+            document.querySelectorAll('.user-img').forEach(function (element) {
               element.src = result.headurl;
             });
-            document.querySelectorAll('.user-name').forEach(function(element) {
+            document.querySelectorAll('.user-name').forEach(function (element) {
               element.innerText = result.name;
             });
-            _this2.query('.cishu').innerText = result.cishu + '次'; // this.query('.xuexi').innerText = result.day + '天'
-            // this.query('.chengji').innerText = result.day + '天'
-
-            _this2.query('.paiming').innerText = result.paiming;
-          })["catch"](function(error) {
+          })["catch"](function (error) {
             return console.log('error', error);
           });
-          this.query('.so-2').src = edit[activeIndex].cover;
-        }
-      },
-      "tiaozhan": {},
-      "dati": {
-        "data": {
-          "timu": [],
-          "timuIndex": 0
-        },
-        "show": function show() {
-          this.data.timu = edit[activeIndex].chapter[chapterIndex].subject;
-          this.showTimu();
-        },
-        "xiayiti": function xiayiti() {
-          this.data.timuIndex++;
-          this.showTimu();
-        },
-        "showTimu": function showTimu() {
-          this.query('.tijiao').style.display = 'block';
-          this.query('.xyt').style.display = 'none';
-          this.query('.cjd').style.display = 'none';
-          var activeItem = this.data.timu[this.data.timuIndex];
-          this.query('.dati-box h2').innerText = activeItem.topic;
-          this.query('.timu-ind').innerText = "\u9898\u76EE" + (this.data.timuIndex + 1);
-          var selectStr = '';
-
-          for (var index = 0; index < activeItem.list.length; index++) {
-            var element = activeItem.list[index];
-            selectStr += "<div class=\"input-item\"><input class=\"select\" type=\"radio\" name=\"sel\" value=\"" + index + "\"><span>" + element + "</span></div>";
-          }
-
-          this.query('.timu-box').innerHTML = "<div class=\"text\">" + activeItem.timu + "</div><div class=\"select-box\">" + selectStr + "</div>";
-        },
-        "tijiao": function tijiao() {
-          var selectIndex = $(".input-item input[name='sel']:checked").val();
-
-          if (selectIndex == undefined) {
-            owo.tool.toast('还没有选择答案!');
-            return;
-          }
-
-          selectIndex = parseInt(selectIndex); // 正确答案
-
-          var activeItem = this.data.timu[this.data.timuIndex];
-          var itemList = this.queryAll('.select-box .input-item input');
-          console.log(activeItem);
-
-          if (activeItem.correct == selectIndex) {
-            this.query('.timu-box').innerHTML = "<h1 style=\"color: green;\">\u56DE\u7B54\u6B63\u786E</h1><p>" + activeItem.jieshi + "</p>";
-          } else {
-            this.query('.timu-box').innerHTML = "<h1 style=\"color: red;\">\u56DE\u7B54\u9519\u8BEF</h1><p>" + activeItem.jieshi + "</p>";
-          }
-
-          this.query('.tijiao').style.display = 'none';
-
-          if (this.data.timu[this.data.timuIndex + 1]) {
-            this.query('.xyt').style.display = 'block';
-          } else {
-            this.query('.cjd').style.display = 'block';
-          }
-        }
-      },
-      "cjd": {
-        "show": function show() {
-          this.query('.share-main').innerText = edit[activeIndex].showTitle.replace('<br>', '');
-          this.query('.share-main2').innerText = edit[activeIndex].chapter[chapterIndex].title.replace('<br>', '');
         }
       }
-    };
-  </script>
+    }
+  },
+  "share": {
+    "show": function show() {
+      var _this2 = this;
 
-  <script src="http://tools.people.com.cn/libs/jquery/1.11.1/jquery-1.11.1.min.js" type="text/javascript" charset="UTF-8"></script>
-  <script src="https://cunchu.site/owo/plug/autoScale.js" type="text/javascript" charset="UTF-8"></script>
-  <script src="./static/js/main.js" type="text/javascript" charset="UTF-8"></script>
+      fetch("http://bp.people.com.cn/dw_daka/index.php/dangshi/zhang?openId=" + window.operID).then(function (response) {
+        return response.json();
+      }).then(function (result) {
+        document.querySelectorAll('.user-img').forEach(function (element) {
+          element.src = result.headurl;
+        });
+        document.querySelectorAll('.user-name').forEach(function (element) {
+          element.innerText = result.name;
+        });
+        _this2.query('.cishu').innerText = result.cishu + '次'; // this.query('.xuexi').innerText = result.day + '天'
+        // this.query('.chengji').innerText = result.day + '天'
 
-  <script src="./static/js/toast.js" type="text/javascript" charset="UTF-8"></script>
-</body>
+        _this2.query('.paiming').innerText = result.paiming;
+      })["catch"](function (error) {
+        return console.log('error', error);
+      });
+      this.query('.so-2').src = edit[activeIndex].cover;
+    }
+  },
+  "tiaozhan": {},
+  "dati": {
+    "data": {
+      "timu": [],
+      "timuIndex": 0,
+      "rightNum": 0,
+      "startTime": 0
+    },
+    "show": function show() {
+      this.data.rightNum = 0;
+      this.data.timu = edit[activeIndex].chapter[chapterIndex].subject;
+      this.showTimu();
+      this.data.startTime = dayjs().format('YYYY-MM-DD HH:mm:ss');
+    },
+    "xiayiti": function xiayiti() {
+      this.data.timuIndex++;
+      this.showTimu();
+    },
+    "showTimu": function showTimu() {
+      this.query('.tijiao').style.display = 'block';
+      this.query('.xyt').style.display = 'none';
+      this.query('.cjd').style.display = 'none';
+      var activeItem = this.data.timu[this.data.timuIndex];
+      this.query('.dati-box h2').innerText = activeItem.topic;
+      this.query('.timu-ind').innerText = "\u9898\u76EE" + (this.data.timuIndex + 1);
+      var selectStr = '';
 
+      for (var index = 0; index < activeItem.list.length; index++) {
+        var element = activeItem.list[index];
+        selectStr += "<div class=\"input-item\"><input class=\"select\" type=\"radio\" name=\"sel\" value=\"" + index + "\"><span>" + element + "</span></div>";
+      }
+
+      this.query('.timu-box').innerHTML = "<div class=\"text\">" + activeItem.timu + "</div><div class=\"select-box\">" + selectStr + "</div>";
+    },
+    "tijiao": function tijiao() {
+      var selectIndex = $(".input-item input[name='sel']:checked").val();
+
+      if (selectIndex == undefined) {
+        owo.tool.toast('还没有选择答案!');
+        return;
+      }
+
+      selectIndex = parseInt(selectIndex); // 正确答案
+
+      var activeItem = this.data.timu[this.data.timuIndex];
+      var itemList = this.queryAll('.select-box .input-item input');
+      console.log(activeItem);
+
+      if (activeItem.correct == selectIndex) {
+        this.data.rightNum++;
+        this.query('.timu-box').innerHTML = "<h1 style=\"color: green;\">\u56DE\u7B54\u6B63\u786E</h1><p>" + activeItem.jieshi + "</p>";
+      } else {
+        this.query('.timu-box').innerHTML = "<h1 style=\"color: red;\">\u56DE\u7B54\u9519\u8BEF</h1><p>" + activeItem.jieshi + "</p>";
+      }
+
+      this.query('.tijiao').style.display = 'none';
+
+      if (this.data.timu[this.data.timuIndex + 1]) {
+        this.query('.xyt').style.display = 'block';
+      } else {
+        this.query('.cjd').style.display = 'block';
+      }
+    }
+  },
+  "cjd": {
+    "show": function show() {
+      this.query('.share-main').innerText = edit[activeIndex].showTitle.replace('<br>', '');
+      this.query('.share-main2').innerText = edit[activeIndex].chapter[chapterIndex].title.replace('<br>', '');
+      var fenshu = owo.script.dati.data.timu.length > 0 ? parseInt(owo.script.dati.data.rightNum / owo.script.dati.data.timu.length * 100) : 0;
+      this.query('.code').innerText = fenshu; // 保存答题结果
+
+      var requestOptions = {
+        method: 'POST',
+        headers: {},
+        redirect: 'follow'
+      };
+
+      if (fenshu == 0) {
+        return;
+      }
+
+      fetch("http://bp.people.com.cn/dw_daka/index.php/dangshi/zhang?openId=" + window.operID + "&zhangjie=" + datiTitle + "&fenshu=" + fenshu + "&start=" + owo.script.dati.data.startTime + "&end=" + dayjs().format('YYYY-MM-DD HH:mm:ss'), requestOptions).then(function (response) {
+        return response.text();
+      }).then(function (result) {
+        return console.log(result);
+      })["catch"](function (error) {
+        return console.log('error', error);
+      });
+    }
+  },
+  "rili": {
+    "show": function show() {}
+  }
+};
+</script>
+
+    <script src="http://tools.people.com.cn/libs/jquery/1.11.1/jquery-1.11.1.min.js" type="text/javascript"  charset="UTF-8"></script>
+    <script src="https://cunchu.site/owo/plug/autoScale.js" type="text/javascript"  charset="UTF-8"></script>
+    <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js" type="text/javascript"  charset="UTF-8"></script>
+    <script src="./static/js/main.js" type="text/javascript"  charset="UTF-8"></script>
+
+    <script src="./static/js/toast.js" type="text/javascript"  charset="UTF-8"></script>
+  </body>
 </html>

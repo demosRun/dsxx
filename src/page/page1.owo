@@ -4,7 +4,7 @@
   img.so.so-1(src="@|7.png|")
   img.so.so-2(src="@|13.png|")
   img.so.so-3(src="@|19.png|" o-tap="last")
-  img.so.so-4(src="@|18.png|" o-tap="play")
+  img.so.so-4.play(src="@|play.png|" o-tap="play")
   img.so.so-5(src="@|20.png|" o-tap="next")
   img.so.so-6(src="@|24.png|")
   plug.so.so-7(_src="./src/page/timeCard.owo" _name="timeCard")
@@ -33,12 +33,19 @@
     show: function () {
       this.query('.so-2').src = edit[activeIndex].cover
     },
+    leave: function () {
+      console.log('暂停!')
+      document.querySelector('.music-bar .doit').style.left = 0
+      this.data.isPlay = false
+      audio.pause()
+    },
     play: function () {
       this.data.isPlay = !this.data.isPlay
       if (this.data.isPlay) {
-        
+        this.query('.so-4').src = '@|suspend.png|'
         audio.play()
       } else {
+        this.query('.so-4').src = '@|play.png|'
         audio.pause()
       }
       
@@ -47,6 +54,8 @@
       if (edit[activeIndex - 1]) {
         activeIndex--
         make(activeIndex)
+        this.data.isPlay = false
+        this.query('.so-4').src = '@|play.png|'
         document.querySelector('.music-bar .doit').style.left = 0
       } else {
         owo.tool.toast('已经是第一篇了!')
@@ -56,6 +65,8 @@
       if (edit[activeIndex + 1]) {
         activeIndex++
         make(activeIndex)
+        this.data.isPlay = false
+        this.query('.so-4').src = '@|play.png|'
         document.querySelector('.music-bar .doit').style.left = 0
       } else {
         owo.tool.toast('已经是最后一篇了!')
@@ -173,5 +184,8 @@
   top: 780px;
   font-size: 31px;
   line-height: 47px;
+}
+.play {
+  width: 94px;
 }
 </style>

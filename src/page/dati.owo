@@ -29,11 +29,15 @@
 module.exports = {
   data: {
     timu: [],
-    timuIndex: 0
+    timuIndex: 0,
+    rightNum: 0,
+    startTime: 0
   },
   show: function () {
+    this.data.rightNum = 0
     this.data.timu = edit[activeIndex].chapter[chapterIndex].subject
     this.showTimu()
+    this.data.startTime = dayjs().format('YYYY-MM-DD HH:mm:ss')
   },
   xiayiti: function () {
     this.data.timuIndex ++
@@ -65,6 +69,7 @@ module.exports = {
     const itemList = this.queryAll('.select-box .input-item input')
     console.log(activeItem)
     if (activeItem.correct == selectIndex) {
+      this.data.rightNum++
       this.query('.timu-box').innerHTML = `<h1 style="color: green;">回答正确</h1><p>${activeItem.jieshi}</p>`
     } else {
       this.query('.timu-box').innerHTML = `<h1 style="color: red;">回答错误</h1><p>${activeItem.jieshi}</p>`

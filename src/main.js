@@ -61,7 +61,7 @@ var edit = [
     "music": "http://cunchu-1251887489.cos.ap-beijing.myqcloud.com/people/music/%E9%BA%A6%E7%94%B0%E9%87%8C%E7%9A%84%E5%BE%AE%E9%A3%8E_1.mp3",
     "cover": "./static/resource/13.png",
     "title": "第一章 中国共产党的创建和投身大革命的洪流《中国共产党简史》",
-    "showTitle": "中国共产党<br>简史",
+    "showTitle": "中国共产党<br>简史1",
     "chapter": [
       {
         "title": "第一章 中国共产党的创建和投身大革命的洪流",
@@ -147,10 +147,10 @@ var edit = [
     "music": "http://cunchu-1251887489.cos.ap-beijing.myqcloud.com/people/music/%E9%BA%A6%E7%94%B0%E9%87%8C%E7%9A%84%E5%BE%AE%E9%A3%8E_1.mp3",
     "cover": "@|13.png|",
     "title": "第二章 中国共产党的创建和投身大革命的洪流《中国共产党简史》",
-    "showTitle": "中国共产党<br>简史",
+    "showTitle": "中国共产党<br>简史2",
     "chapter": [
       {
-        "title": "第一章 中国共产党的创建和投身大革命的洪流",
+        "title": "2第一章 中国共产党的创建和投身大革命的洪流",
         "time": "2019-12-01",
         "subject": [
           {
@@ -183,7 +183,7 @@ var edit = [
         ]
       },
       {
-        "title": "第二章 中国共产党的创建和投身大革命的洪流",
+        "title": "2第二章 中国共产党的创建和投身大革命的洪流",
         "time": "2019-12-01",
         "subject": [
           {
@@ -223,22 +223,44 @@ var audio = '';//这里的路径写上mp3文件在项目中的绝对路径
 
 // 显示题目列表
 function timuList (editInd) {
-  var item = edit[editInd].chapter
-  var temp = ''
-  for (let index = 0; index < item.length; index++) {
-    const element = item[index];
-    temp += `<div class="item" onclick="dati(${index})"><h3>${element.title}</h3><div class="code">成绩 90</div><div class="time">${element.time}</div></div>`
-  }
-  document.querySelector('.zhangjie').innerHTML = temp
+  // 获取成绩列表
+  
+  fetch("http://bp.people.com.cn/dw_daka/index.php/dangshi/allzhang?openId=" + window.operID)
+  .then(response => response.json())
+  .then(result => {
+    console.log(result)
+    var saveArr = {}
+    for (let index = 0; index < result.length; index++) {
+      const element = result[index];
+      saveArr[element.zhangjie] = element.fenshu
+    }
+    var item = edit[editInd].chapter
+    var temp = ''
+    for (let index = 0; index < item.length; index++) {
+      const element = item[index];
+      let codeStr = `<div class="code">未测试</div>`
+      if (saveArr[element.title]) {
+        codeStr = `<div class="code active">成绩: ${saveArr[element.title]}</div>`
+      }
+      temp += `<div class="item" onclick="dati(${index}, '${element.title}')"><h3>${element.title}</h3>${codeStr}<div class="time">${element.time}</div></div>`
+    }
+    document.querySelector('.zhangjie').innerHTML = temp
+  })
+  .catch(error => console.log('error', error));
 }
+var datiTitle = '测试章节'
 
-function dati (index) {
+function dati (index, title) {
+  datiTitle = title
   chapterIndex = parseInt(index)
   owo.go('dati//moveToLeft/moveFromRight')
 }
 
 // audio.play();
+// @|arrow.png|
 function make (ind) {
+  activeIndex = ind
+  console.log(activeIndex)
   var item = edit[ind]
   audio = new Audio(item.music)
   document.querySelector('.music-bar .time-now').innerText = 0
@@ -255,10 +277,13 @@ function make (ind) {
   var titleStr = ''
   for (let index = 0; index < edit.length; index++) {
     const element = edit[index];
-    titleStr += `<div class="item">${element.showTitle}</div>`
+    titleStr += `<div class="item" onclick="make(${index})">${element.showTitle}<img class="arrow" src="./static/resource/arrow.png"></div>`
   }
   document.querySelector('.select-box').innerHTML = titleStr
+  setTimeout(() => {
+    document.querySelectorAll('.select-box .item')[ind].classList.add('active')
+  }, 100);
+  timuList(ind)
 }
 
 make(activeIndex)
-timuList(activeIndex)
