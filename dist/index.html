@@ -25,6 +25,7 @@
       
     <!-- 附属css文件 -->
     <link rel="stylesheet" href="./static/css/main.css" charset="utf-8">
+    <link rel="stylesheet" href="./static/css/sign2.css" charset="utf-8">
       
   </head>
   <body>
@@ -34,13 +35,13 @@
     <!-- 页面[share]-->
     <div class="share page" template="share" style="display: none;"><img src="./static/resource/share.jpg"><img class="so-2"><img class="user-img"><div class="user-name"></div><div class="cishu"></div><div class="xuexi"></div><div class="chengji"></div><div class="paiming"></div><div class="so botton-box baocun" go="page1//moveToRight/moveFromLeft"><div class="so so-10">返回首页</div><img class="so so-11" src="./static/resource/40.png"></div><div class="so botton-box tiaozhan" go="tiaozhan//moveToLeft/moveFromRight"><div class="so so-10">挑战</div><img class="so so-11" src="./static/resource/40.png"></div></div>
     <!-- 页面[tiaozhan]-->
-    <div class="tiaozhan-box page" template="tiaozhan" style="display: none;"><div class="select-box"></div><div class="zhangjie"></div><div class="so botton-box long baocun" go="share//moveToLeft/moveFromRight"><div class="so so-10">保存海报</div><img class="so so-11" src="./static/resource/long-button-bg.png"></div><img class="rili" src="./static/resource/rili.png"></div>
+    <div class="tiaozhan-box page" template="tiaozhan" style="display: none;"><div class="select-box"></div><div class="zhangjie"></div><div class="so botton-box long baocun" go="share//moveToLeft/moveFromRight"><div class="so so-10">保存海报</div><img class="so so-11" src="./static/resource/long-button-bg.png"></div><img class="rili" src="./static/resource/rili.png" o-tap="document.querySelector('.rili-box').style.display = 'block'"></div>
     <!-- 页面[dati]-->
     <div class="dati page" template="dati" style="display: none;"><div class="dati-box"><h2></h2><div class="timu-ind"></div></div><div class="timu-box"><div class="text">1/10 1911年10月爆发的（ ），推翻了清王朝的统治，建立了中华民国，结束了统治中国两千多年的君主专制制度。</div><div class="select-box"><div class="input-item"><input class="select" type="radio" name="sel"><span>选项1</span></div><div class="input-item"><input class="select" type="radio" name="sel"><span>选项2</span></div><div class="input-item"><input class="select" type="radio" name="sel"><span>选项3</span></div></div></div><div class="so botton-box long baocun tijiao" o-tap="tijiao"><div class="so so-10">提交</div><img class="so so-11" src="./static/resource/long-button-bg.png"></div><div class="so botton-box long baocun xyt" o-tap="xiayiti" style="display:none;"><div class="so so-10">下一题</div><img class="so so-11" src="./static/resource/long-button-bg.png"></div><div class="so botton-box long baocun cjd" go="cjd//moveToLeft/moveFromRight" style="display:none;"><div class="so so-10">生成成绩单</div><img class="so so-11" src="./static/resource/long-button-bg.png"></div></div>
     <!-- 页面[cjd]-->
     <div class="cjd page" template="cjd" style="display: none;"><img src="./static/resource/cjd.png"><img class="user-img"><div class="user-name"></div><div class="code">96</div><div class="share-main"></div><div class="share-main2"></div><div class="bottom-text">参加挑战：1天 今日排名：18 今日挑战人数：418位</div><div class="so botton-box baocun" o-tap="window.location.replace('')"><div class="so so-10">再次挑战</div><img class="so so-11" src="./static/resource/40.png"></div><div class="so botton-box tiaozhan" go="tiaozhan//moveToLeft/moveFromRight"><div class="so so-10">学习打卡</div><img class="so so-11" src="./static/resource/40.png"></div><div class="share-info" o-animation="flicker">长按保存成绩单，分享你的今天战绩吧！</div></div></div>
     <!-- 插件[rili]-->
-    <div class="rili-box owo-block" template="rili" style="display: none;"></div>
+    <div class="rili-box scale-box owo-block" template="rili" style="display: none;"><div class="rili-card"><div id="calendar"></div></div><img class="close" src="./static/resource/close.png" o-tap="hideRili"></div>
     
 <!-- 框架script文件 -->
 <script src="./static/js/owo.core.js" type="text/javascript" charset="UTF-8"></script>
@@ -269,7 +270,21 @@ owo.script = {
     }
   },
   "rili": {
-    "show": function show() {}
+    "show": function show() {
+      var signList = [{
+        "signDay": "09"
+      }, {
+        "signDay": "11"
+      }, {
+        "signDay": "12"
+      }, {
+        "signDay": "13"
+      }];
+      calUtil.init(signList);
+    },
+    "hideRili": function hideRili() {
+      this.$el.style.display = 'none';
+    }
   }
 };
 </script>
@@ -278,6 +293,7 @@ owo.script = {
     <script src="https://cunchu.site/owo/plug/autoScale.js" type="text/javascript"  charset="UTF-8"></script>
     <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js" type="text/javascript"  charset="UTF-8"></script>
     <script src="./static/js/main.js" type="text/javascript"  charset="UTF-8"></script>
+    <script src="./static/js/calendar2.js" type="text/javascript"  charset="UTF-8"></script>
 
     <script src="./static/js/toast.js" type="text/javascript"  charset="UTF-8"></script>
   </body>

@@ -5,7 +5,7 @@
   .so.botton-box.long.baocun(go="share//moveToLeft/moveFromRight")
     .so.so-10 保存海报
     img.so.so-11(src="@|long-button-bg.png|")
-  img.rili(src="@|rili.png|")
+  img.rili(src="@|rili.png|" o-tap="document.querySelector('.rili-box').style.display = 'block'")
 </template>
 <script>
 module.exports = {

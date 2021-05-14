@@ -94,6 +94,10 @@
 			"name": "toast",
 			"afterbody": true,
 			"src": "./owo_modules/toast.js"
+		},
+		{
+			"name": "calendar2",
+			"src": "./src/resource/calendar2.js"
 		}
 	],
 	"styleList": [
@@ -101,6 +105,10 @@
 			"name": "main",
 			"src": "./src/main.css",
 			"resource": true
+		},
+		{
+			"name": "sign2",
+			"src": "./src/resource/sign2.css"
 		}
 	],
 	"pageList": [

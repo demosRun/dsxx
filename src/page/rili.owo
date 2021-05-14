@@ -1,11 +1,18 @@
 <template lang="pug">
-.rili-box
-
+.rili-box.scale-box
+  .rili-card
+    #calendar
+  img.close(src="@|close.png|" o-tap="hideRili")
 </template>
 <script>
 module.exports = {
   show: function () {
+    var signList=[{"signDay":"09"},{"signDay":"11"},{"signDay":"12"},{"signDay":"13"}];
+    calUtil.init(signList);
   },
+  hideRili: function () {
+    this.$el.style.display = 'none'
+  }
 }
 </script>
 <style lang="less">
@@ -13,8 +20,33 @@ module.exports = {
   position: absolute;
   left: 0;
   top: 0;
-  background-color: rgba(0, 0, 0, 0.20);
+  background-color: rgba(0, 0, 0, 0.40);
   width: 100%;
   height: 100%;
+  display: none;
+}
+.rili-card {
+  width: 567px;
+  height: 546px;
+  background-image:  url('@|rili-box.png|');
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+}
+.close {
+  position: absolute;
+  right: 110px;
+  top: 490px;
+}
+.sign_main {
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 94%;
+  margin: auto;
+  top: 140px;
 }
 </style>
