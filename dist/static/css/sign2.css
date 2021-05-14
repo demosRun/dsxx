@@ -45,8 +45,8 @@
 
 .calendar_month_span {
 	display: inline;
-	line-height: 40px;
-	font-size: 16px;
+	line-height: 53px;
+	font-size: 31px;
 	color: #656565;
 	letter-spacing: 2px;
 	font-weight: bold;
@@ -64,9 +64,6 @@
 .sign_row div {
 	display:table-cell;
 	width:14.3%;
-	border-top: 1px solid #e3e3e3;
-	/*border-bottom: 1px solid #e3e3e3;*/
-	border-left: 1px solid #e3e3e3;
 	height: 40px;
     text-align: center;
     line-height: 40px;
@@ -81,7 +78,8 @@
 	border-bottom: 1px solid #e3e3e3;
 }
 .sign_equal .on {
-	background: url(../images/sign_have.gif) no-repeat center;
+	background: url(../resource/rili-bg.png) no-repeat center;
+	color: white;
 }
 
 .sign_contener,.sign_contener:visited {

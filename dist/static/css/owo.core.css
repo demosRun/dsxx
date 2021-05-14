@@ -587,6 +587,25 @@ li {
   width: 94%;
   margin: auto;
   top: 140px;
+  font-size: 30px;
+}
+
+.rili-box .sign_row div {
+  height: 50px;
+  line-height: 50px;
+}
+
+.rili-box .showText {
+  font-size: 38px;
+  color: #80623b;
+  text-align: center;
+  line-height: 120px;
+}
+
+.rili-box .showText span {
+  font-weight: bold;
+  margin: 0 5px;
+  font-size: 60px;
 }
 /* 页面切换动画 */
 .o-page-moveToLeft {

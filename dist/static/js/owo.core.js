@@ -1,4 +1,4 @@
-// Fri May 14 2021 10:14:30 GMT+0800 (GMT+08:00)
+// Fri May 14 2021 16:27:09 GMT+0800 (GMT+08:00)
 var owo = {tool: {},state: {},event: {}};
 /* 方法合集 */
 var _owo = {
@@ -106,6 +106,7 @@ _owo.bindEvent = function (eventName, eventFor, tempDom, moudleScript) {
         // 清零
         startTime = 0;
         isMove = false
+        event.preventDefault()
       }
       break;
   

@@ -2,13 +2,32 @@
 .rili-box.scale-box
   .rili-card
     #calendar
+    .showText 本月签到<span>8</span>天
   img.close(src="@|close.png|" o-tap="hideRili")
 </template>
 <script>
 module.exports = {
   show: function () {
-    var signList=[{"signDay":"09"},{"signDay":"11"},{"signDay":"12"},{"signDay":"13"}];
-    calUtil.init(signList);
+    var signList = []
+    // 获取打卡记录
+    fetch(`http://bp.people.com.cn/dw_daka/index.php/dangshi/daka?openId=${window.operID}`, {
+      method: 'POST',
+      headers: {},
+      redirect: 'follow'
+    }).then(response => response.json()).then(res => {
+        console.log(res.result)
+        let max = 0
+        let lianxu = 0
+        res.result.forEach(element => {
+          if (element.startsWith(dayjs().format('YYYY-MM'))) {
+            element = element.replace(dayjs().format('YYYY-MM-'), '')
+            signList.push({"signDay": element})
+            lianxu ++
+          }
+        });
+        this.query('.showText').innerHTML = `本月已签到<span>${lianxu}</span>天`
+        calUtil.init(signList);
+      }).catch(error => console.log('error', error));
   },
   hideRili: function () {
     this.$el.style.display = 'none'
@@ -48,5 +67,21 @@ module.exports = {
   width: 94%;
   margin: auto;
   top: 140px;
+  font-size: 30px;
+}
+.sign_row div {
+  height: 50px;
+  line-height: 50px;
+}
+.showText {
+  font-size: 38px;
+  color: #80623b;
+  text-align: center;
+  line-height: 120px;
+  span {
+    font-weight: bold;
+    margin: 0 5px;
+    font-size: 60px;
+  }
 }
 </style>

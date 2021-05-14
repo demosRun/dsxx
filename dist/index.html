@@ -41,7 +41,7 @@
     <!-- 页面[cjd]-->
     <div class="cjd page" template="cjd" style="display: none;"><img src="./static/resource/cjd.png"><img class="user-img"><div class="user-name"></div><div class="code">96</div><div class="share-main"></div><div class="share-main2"></div><div class="bottom-text">参加挑战：1天 今日排名：18 今日挑战人数：418位</div><div class="so botton-box baocun" o-tap="window.location.replace('')"><div class="so so-10">再次挑战</div><img class="so so-11" src="./static/resource/40.png"></div><div class="so botton-box tiaozhan" go="tiaozhan//moveToLeft/moveFromRight"><div class="so so-10">学习打卡</div><img class="so so-11" src="./static/resource/40.png"></div><div class="share-info" o-animation="flicker">长按保存成绩单，分享你的今天战绩吧！</div></div></div>
     <!-- 插件[rili]-->
-    <div class="rili-box scale-box owo-block" template="rili" style="display: none;"><div class="rili-card"><div id="calendar"></div></div><img class="close" src="./static/resource/close.png" o-tap="hideRili"></div>
+    <div class="rili-box scale-box owo-block" template="rili" style="display: none;"><div class="rili-card"><div id="calendar"></div><div class="showText">本月签到<span>8</span>天</div></div><img class="close" src="./static/resource/close.png" o-tap="hideRili"></div>
     
 <!-- 框架script文件 -->
 <script src="./static/js/owo.core.js" type="text/javascript" charset="UTF-8"></script>
@@ -271,16 +271,34 @@ owo.script = {
   },
   "rili": {
     "show": function show() {
-      var signList = [{
-        "signDay": "09"
-      }, {
-        "signDay": "11"
-      }, {
-        "signDay": "12"
-      }, {
-        "signDay": "13"
-      }];
-      calUtil.init(signList);
+      var _this3 = this;
+
+      var signList = []; // 获取打卡记录
+
+      fetch("http://bp.people.com.cn/dw_daka/index.php/dangshi/daka?openId=" + window.operID, {
+        method: 'POST',
+        headers: {},
+        redirect: 'follow'
+      }).then(function (response) {
+        return response.json();
+      }).then(function (res) {
+        console.log(res.result);
+        var max = 0;
+        var lianxu = 0;
+        res.result.forEach(function (element) {
+          if (element.startsWith(dayjs().format('YYYY-MM'))) {
+            element = element.replace(dayjs().format('YYYY-MM-'), '');
+            signList.push({
+              "signDay": element
+            });
+            lianxu++;
+          }
+        });
+        _this3.query('.showText').innerHTML = "\u672C\u6708\u5DF2\u7B7E\u5230<span>" + lianxu + "</span>\u5929";
+        calUtil.init(signList);
+      })["catch"](function (error) {
+        return console.log('error', error);
+      });
     },
     "hideRili": function hideRili() {
       this.$el.style.display = 'none';
