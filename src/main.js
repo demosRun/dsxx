@@ -248,6 +248,7 @@ function timuList (editInd) {
     }
     var item = edit[editInd].chapter
     var temp = ''
+    // 生成章节
     for (let index = 0; index < item.length; index++) {
       const element = item[index];
       let codeStr = `<div class="code">未测试</div>`
@@ -256,7 +257,18 @@ function timuList (editInd) {
       }
       temp += `<div class="item" onclick="dati(${index}, '${element.title}')"><h3>${element.title}</h3>${codeStr}<div class="time">${element.time}</div></div>`
     }
-    document.querySelector('.zhangjie').innerHTML = temp
+    document.querySelector('.tiaozhan-box .zhangjie').innerHTML = temp
+    // 生成更多
+    temp = ''
+    for (let index = 0; index < item.length; index++) {
+      const element = item[index];
+      let codeStr = `<div class="code">未测试</div>`
+      if (saveArr[element.title]) {
+        codeStr = `<div class="code active">成绩: ${saveArr[element.title]}</div>`
+      }
+      temp += `<div class="item" onclick="gengduo(${editInd}, '${index}')"><h3>${element.title}</h3>${codeStr}<div class="time">${element.time}</div></div>`
+    }
+    document.querySelector('.gengduo .zhangjie').innerHTML = temp
   })
   .catch(error => console.log('error', error));
 }
@@ -295,7 +307,22 @@ function make (ind) {
   setTimeout(() => {
     document.querySelectorAll('.select-box .item')[ind].classList.add('active')
   }, 100);
+  // 生成更多题目
+  titleStr = ''
+  for (let index = 0; index < edit.length; index++) {
+    const element = edit[index];
+    titleStr += `<div class="item" onclick="make(${index})">${element.showTitle}<img class="arrow" src="./static/resource/arrow.png"></div>`
+  }
+  document.querySelector('.gengduo .select-box').innerHTML = titleStr
+  setTimeout(() => {
+    document.querySelectorAll('.gengduo .select-box .item')[ind].classList.add('active')
+  }, 100);
   timuList(ind)
 }
 
 make(activeIndex)
+
+
+function gengduo (index, index2) {
+  owo.go('page1//moveToLeft/moveFromRight')
+}

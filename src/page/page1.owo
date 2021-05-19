@@ -6,7 +6,7 @@
   img.so.so-3(src="@|19.png|" o-tap="last")
   img.so.so-4.play(src="@|play.png|" o-tap="play")
   img.so.so-5(src="@|20.png|" o-tap="next")
-  img.so.so-6(src="@|24.png|")
+  //- img.so.so-6(src="@|24.png|")
   plug.so.so-7(_src="./src/page/timeCard.owo" _name="timeCard")
   img.so.so-8(src="@|44.png|")
   //- 音乐条
@@ -20,9 +20,13 @@
   .so.botton-box.baocun(go="share//moveToLeft/moveFromRight")
     .so.so-10 保存海报
     img.so.so-11(src="@|40.png|")
-  .so.botton-box.tiaozhan(go="tiaozhan//moveToLeft/moveFromRight")
-    .so.so-10 挑战
+  //- .so.botton-box.tiaozhan(go="tiaozhan//moveToLeft/moveFromRight")
+  //-   .so.so-10 挑战
+  //-   img.so.so-11(src="@|40.png|")
+  .so.botton-box.tiaozhan(go="gengduo//moveToLeft/moveFromRight")
+    .so.so-10 更多
     img.so.so-11(src="@|40.png|")
+  img.rili(src="@|rili.png|" o-tap="document.querySelector('.rili-box').style.display = 'block'" o-animation="shrink")
 </template>
 
 <script>
@@ -32,6 +36,7 @@
     },
     show: function () {
       this.query('.so-2').src = edit[activeIndex].cover
+      this.query('.title').innerHTML = edit[activeIndex].title
     },
     leave: function () {
       console.log('暂停!')
@@ -187,5 +192,11 @@
 }
 .play {
   width: 94px;
+}
+.rili {
+  position: absolute;
+  top: 200px;
+  right: 40px;
+  z-index: 9;
 }
 </style>

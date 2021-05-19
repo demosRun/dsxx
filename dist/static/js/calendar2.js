@@ -48,24 +48,36 @@ var calUtil = {
     //   calUtil.init(signList);
     // });
     
-    $(".calendar_record").click(function(){
-      //ajax获取日历json数据
-      //alert(typeof(signList)+"yxy");
-    	//var signList=[{"signDay":"10"},{"signDay":"11"},{"signDay":"12"},{"signDay":"13"}];
-    	//var tmp = {"signDay":$(this).html()};
-      //if (typeof(signList) == 'undefined'){
-        //不做处理
-      //}else{
-      //  signList.splice('','',tmp);
-      //  console.log(signList);
-      //  calUtil.init(signList);
-     // }
-     //alert($(this).html());
-    var tmp = {"signDay":$(this).html()};
-    calUtil.init(signList,tmp);
-     
+    $(".calendar_record").click(function(e){
       
-      
+      const key = e.target.getAttribute("key")
+      if (!key) return
+      console.log(key)
+      var tmp = {"signDay":$(this).html()};
+      calUtil.init(signList,tmp);
+      // 获取打卡记录
+      fetch(`http://bp.people.com.cn/dw_daka/index.php/dangshi/daka?openId=${window.operID}&times=${key}`, {
+        method: 'POST',
+        headers: {},
+        redirect: 'follow'
+      }).then(response => response.json()).then(res => {
+        
+        if (res.msg == 'success') {
+          owo.tool.toast('补签成功!')
+          let max = 0
+          let lianxu = 0
+          res.result.forEach(element => {
+            if (element.startsWith(dayjs().format('YYYY-MM'))) {
+              element = element.replace(dayjs().format('YYYY-MM-'), '')
+              signList.push({"signDay": element})
+              lianxu ++
+            }
+          });
+          document.querySelector('.showText').innerHTML = `本月已签到<span>${lianxu}</span>天`
+          calUtil.init(signList);
+        }
+          
+      }).catch(error => console.log('error', error));
     });
   },
   //获取当前选择的年月
@@ -172,10 +184,37 @@ var calUtil = {
 
      var ifHasSigned = calUtil.ifHasSigned(signList,myMonth[w][d]);
      console.log("001:"+ifHasSigned);
+     const month = calUtil.showMonth < 9 ? '0' + calUtil.showMonth : calUtil.showMonth
+     const day = myMonth[w][d] < 9 ? '0' + myMonth[w][d] : myMonth[w][d]
      if(ifHasSigned && typeof(myMonth[w][d]) != 'undefined'){
-      htmls.push("<div class='td_"+d+" on'>" + (!isNaN(myMonth[w][d]) ? myMonth[w][d] : " ") + "</div>");
+        if (day) {
+          if (0 <= (new Date().getDate() - myMonth[w][d]) && (new Date().getDate() - myMonth[w][d]) < 3) {
+            htmls.push(`<div key="${calUtil.showYear}-${month}-${day}"  class='td_`+d+" on'>" + (!isNaN(myMonth[w][d]) ? myMonth[w][d] : " ") + "</div>");
+          } else {
+            htmls.push(`<div class='td_`+d+" on'>" + (!isNaN(myMonth[w][d]) ? myMonth[w][d] : " ") + "</div>");
+          }
+          
+        } else {
+          htmls.push(`<div class='td_`+d+" on'> </div>");
+        }
+      
      } else {
-      htmls.push("<div class='td_"+d+" calendar_record'>" + (!isNaN(myMonth[w][d]) ? myMonth[w][d] : " ") + "</div>");
+      if (day) {
+        if (0 <= (new Date().getDate() - myMonth[w][d]) && (new Date().getDate() - myMonth[w][d]) < 3) {
+          htmls.push(`<div key="${calUtil.showYear}-${month}-${day}" class='td_`+d+" calendar_record'>" + (!isNaN(myMonth[w][d]) ? myMonth[w][d] : " ") + "</div>");
+        } else {
+          if ((new Date().getDate() - myMonth[w][d]) < 0) {
+            htmls.push(`<div class='no-day td_`+d+" calendar_record'>" + (!isNaN(myMonth[w][d]) ? myMonth[w][d] : " ") + "</div>");
+          } else {
+            htmls.push(`<div class='td_`+d+" calendar_record'>" + (!isNaN(myMonth[w][d]) ? myMonth[w][d] : " ") + "</div>");
+          }
+          
+        }
+        
+      } else {
+        htmls.push(`<div class='td_`+d+" calendar_record'> </div>");
+      }
+      
      }
     }
     htmls.push("</div>");

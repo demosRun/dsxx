@@ -142,6 +142,11 @@
 			"name": "rili",
 			"src": "/src/page/rili.owo",
 			"type": "block"
+		},
+		{
+			"name": "gengduo",
+			"src": "/src/page/gengduo.owo",
+			"type": "page"
 		}
 	],
 	"mode": {

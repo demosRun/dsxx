@@ -110,6 +110,19 @@ li {
   line-height: 40px;
   color: #7c715f;
 }
+[o-animation="shrink"] {
+  -webkit-animation: shrink 1s linear alternate infinite;
+  animation: shrink 1s linear alternate infinite;
+}
+@-webkit-keyframes shrink{
+  0%{-webkit-transform:scale(0.9);}
+  100%{-webkit-transform:scale(1);}
+}
+@keyframes shrink{
+  0%{transform:scale(0.9);}
+  100%{transform:scale(1);}
+}
+
 .page-1 .so-0 {
   left: 0px;
   top: 0px;
@@ -235,6 +248,13 @@ li {
 
 .page-1 .play {
   width: 94px;
+}
+
+.page-1 .rili {
+  position: absolute;
+  top: 200px;
+  right: 40px;
+  z-index: 9;
 }
 .share .user-img {
   position: absolute;
@@ -382,12 +402,6 @@ li {
   right: 0;
   margin: auto;
   bottom: 300px;
-}
-
-.tiaozhan-box .rili {
-  position: absolute;
-  top: 275px;
-  right: 5px;
 }
 .dati {
   background-image: url('../resource/3.jpg');
@@ -564,7 +578,8 @@ li {
 
 .rili-box .rili-card {
   width: 567px;
-  height: 546px;
+  height: 590px;
+  background-repeat: no-repeat;
   background-image: url('../resource/rili-box.png');
   position: absolute;
   left: 0;
@@ -574,6 +589,22 @@ li {
   bottom: 0;
 }
 
+.rili-box .rili-card .bottom {
+  height: 100px;
+  background-color: #f8ebd7;
+  border-radius: 0 0 15px 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.rili-box .rili-card .botton-box {
+  width: 258px;
+  height: 68px;
+  z-index: 0;
+  position: relative;
+}
+
 .rili-box .close {
   position: absolute;
   right: 110px;
@@ -581,11 +612,8 @@ li {
 }
 
 .rili-box .sign_main {
-  position: absolute;
-  left: 0;
-  right: 0;
   width: 94%;
-  margin: auto;
+  margin: 0 auto;
   top: 140px;
   font-size: 30px;
 }
@@ -606,6 +634,119 @@ li {
   font-weight: bold;
   margin: 0 5px;
   font-size: 60px;
+}
+
+.rili-box .tishi {
+  font-size: 21px;
+  line-height: 40px;
+  background-color: #f8ebd7;
+  text-align: right;
+  padding: 0 26px;
+  margin-top: 10px;
+  color: #666;
+}
+.gengduo {
+  background-image: url('../resource/3.jpg');
+}
+
+.gengduo .select-box .item {
+  background-image: url('../resource/item-bg.png');
+  height: 100px;
+  line-height: 50px;
+  font-size: 28px;
+  padding: 10px 12px;
+  margin: 0 10px;
+  text-align: center;
+  word-break: keep-all;
+  border-radius: 10px;
+  color: #9d8255;
+}
+
+.gengduo .zhangjie .item {
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 10px;
+  height: 120px;
+  padding-top: 10px;
+  position: relative;
+}
+
+.gengduo .zhangjie .item .time {
+  position: absolute;
+  right: 0;
+  color: #666;
+  font-size: 24px;
+  bottom: 10px;
+}
+
+.gengduo .zhangjie .item .code {
+  position: absolute;
+  bottom: 10px;
+  color: #0050b4;
+  width: 200px;
+}
+
+.gengduo .zhangjie .item .code.active {
+  color: #c70000;
+}
+
+.gengduo .zhangjie .item h3 {
+  font-size: 30px;
+}
+
+.gengduo .item.active {
+  box-shadow: 1px 1px 5px #ccc;
+}
+
+.gengduo .select-box {
+  position: absolute;
+  top: 160px;
+  height: 150px;
+  width: 730px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  display: flex;
+  white-space: normal;
+  overflow: auto;
+}
+
+.gengduo .select-box .item {
+  position: relative;
+}
+
+.gengduo .select-box .arrow {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  bottom: -21px;
+  display: none;
+}
+
+.gengduo .select-box .active .arrow {
+  display: block;
+}
+
+.gengduo .zhangjie {
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 630px;
+  top: 320px;
+  margin: auto;
+  font-size: 28px;
+  background-color: white;
+  border-radius: 10px;
+  padding: 25px;
+  height: 820px;
+  overflow: auto;
+}
+
+.gengduo .baocun {
+  left: 0;
+  right: 0;
+  margin: auto;
+  bottom: 300px;
 }
 /* 页面切换动画 */
 .o-page-moveToLeft {

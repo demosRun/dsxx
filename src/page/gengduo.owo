@@ -1,9 +1,9 @@
 <template lang="pug">
-.tiaozhan-box
+.gengduo
   .select-box
   .zhangjie
-  .so.botton-box.long.baocun(go="share//moveToLeft/moveFromRight")
-    .so.so-10 保存海报
+  .so.botton-box.long.baocun(go="page1//moveToRight/moveFromLeft")
+    .so.so-10 返回首页
     img.so.so-11(src="@|long-button-bg.png|")
 </template>
 <script>
@@ -11,7 +11,7 @@ module.exports = {
 }
 </script>
 <style lang="less">
-.tiaozhan-box {
+.gengduo {
   background-image: url('@|3.jpg|');
   .select-box .item {
     background-image: url('@|item-bg.png|');

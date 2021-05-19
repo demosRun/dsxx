@@ -1,8 +1,14 @@
 <template lang="pug">
 .rili-box.scale-box
   .rili-card
-    #calendar
     .showText 本月签到<span>8</span>天
+    #calendar
+    .tishi 点击日历数字可以对前两天进行补签
+    .bottom
+      .botton-box(o-tap="daka")
+        .so.so-10 打卡
+        img.so.so-11(src="@|40.png|")
+    
   img.close(src="@|close.png|" o-tap="hideRili")
 </template>
 <script>
@@ -10,15 +16,38 @@ module.exports = {
   show: function () {
     var signList = []
     // 获取打卡记录
+    fetch(`http://bp.people.com.cn/dw_daka/index.php/dangshi/riqi?openId=${window.operID}`, {
+      method: 'POST',
+      headers: {},
+      redirect: 'follow'
+    }).then(response => response.json()).then(res => {
+        console.log(res)
+        let max = 0
+        let lianxu = 0
+        res.forEach(element => {
+          if (element.startsWith(dayjs().format('YYYY-MM'))) {
+            element = element.replace(dayjs().format('YYYY-MM-'), '')
+            signList.push({"signDay": element})
+            lianxu ++
+          }
+        });
+        this.query('.showText').innerHTML = `本月已签到<span>${lianxu}</span>天`
+        calUtil.init(signList);
+      }).catch(error => console.log('error', error));
+  },
+  daka: function () {
+    var signList = []
+    // 获取打卡记录
     fetch(`http://bp.people.com.cn/dw_daka/index.php/dangshi/daka?openId=${window.operID}`, {
       method: 'POST',
       headers: {},
       redirect: 'follow'
     }).then(response => response.json()).then(res => {
-        console.log(res.result)
+      owo.tool.toast('打卡成功!')
+        console.log(res)
         let max = 0
         let lianxu = 0
-        res.result.forEach(element => {
+        res.forEach(element => {
           if (element.startsWith(dayjs().format('YYYY-MM'))) {
             element = element.replace(dayjs().format('YYYY-MM-'), '')
             signList.push({"signDay": element})
@@ -46,7 +75,8 @@ module.exports = {
 }
 .rili-card {
   width: 567px;
-  height: 546px;
+  height: 590px;
+  background-repeat: no-repeat;
   background-image:  url('@|rili-box.png|');
   position: absolute;
   left: 0;
@@ -54,6 +84,20 @@ module.exports = {
   margin: auto;
   top: 0;
   bottom: 0;
+  .bottom {
+    height: 100px;
+    background-color: #f8ebd7;
+    border-radius: 0 0 15px 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .botton-box {
+    width: 258px;
+    height: 68px;
+    z-index: 0;
+    position: relative;
+  }
 }
 .close {
   position: absolute;
@@ -61,11 +105,8 @@ module.exports = {
   top: 490px;
 }
 .sign_main {
-  position: absolute;
-  left: 0;
-  right: 0;
   width: 94%;
-  margin: auto;
+  margin: 0 auto;
   top: 140px;
   font-size: 30px;
 }
@@ -83,5 +124,14 @@ module.exports = {
     margin: 0 5px;
     font-size: 60px;
   }
+}
+.tishi {
+  font-size: 21px;
+  line-height: 40px;
+  background-color: #f8ebd7;
+  text-align: right;
+  padding: 0 26px;
+  margin-top: 10px;
+  color: #666;
 }
 </style>
